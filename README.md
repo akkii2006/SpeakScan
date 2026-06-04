@@ -19,29 +19,23 @@ GitHub: https://github.com/akkii2006/SpeakScan
 
 ## Setup
 
-Install dependencies:
+Install all dependencies via pip:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Install ffmpeg (required by yt-dlp and Whisper):
+---
 
-```bash
-# Ubuntu / Debian
-sudo apt install ffmpeg
+## HuggingFace Access
 
-# macOS
-brew install ffmpeg
-```
+The diarization pipeline uses three gated models on HuggingFace. You need to visit each link and click "Accept" while logged into your HuggingFace account:
 
-You need a HuggingFace token with access to the pyannote diarization model. Get one at https://huggingface.co/settings/tokens and accept the model terms at https://huggingface.co/pyannote/speaker-diarization-3.1.
+- https://huggingface.co/pyannote/speaker-diarization-3.1
+- https://huggingface.co/pyannote/segmentation-3.0
+- https://huggingface.co/pyannote/speaker-diarization-community-1
 
-Set your token as an environment variable to avoid entering it each run:
-
-```bash
-export HF_TOKEN=your_token_here
-```
+Once accepted, generate a token at https://huggingface.co/settings/tokens. You will be prompted to enter it when you run the pipeline.
 
 ---
 
@@ -51,7 +45,7 @@ export HF_TOKEN=your_token_here
 python main.py
 ```
 
-The pipeline will prompt you for a YouTube URL, process the video, and ask whether to convert results to a training dataset and whether to view the output. After each video, you can process another or exit.
+The pipeline will ask for your HuggingFace token, then prompt you for a YouTube URL. After processing, you can choose to convert results to a training dataset JSON, view the output, and process another video or exit.
 
 ---
 
@@ -109,6 +103,6 @@ outputs/
 
 ## Notes
 
-- GPU is used automatically if available (CUDA)
+- GPU is used automatically if available
 - Whisper model size can be changed in transcriber.py (tiny, base, small, medium, large)
-- Audio files are saved alongside outputs and can be deleted after processing if not needed
+- PyTorch must be installed matching your CUDA version — see https://pytorch.org/get-started/locally
