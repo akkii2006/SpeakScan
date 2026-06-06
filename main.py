@@ -1,14 +1,16 @@
 import os
-import sys
 import threading
 import itertools
 import time
+import json
 from downloader import download_audio
 from transcriber import transcribe, get_full_transcript, get_segments
 from diarizer import diarize, merge_diarization_with_transcript
 from emotion_tagger import load_emotion_classifier, tag_emotions
 from output_handler import save_outputs, view_results
 from dataset_converter import convert_to_dataset
+from visualizer import generate_visualizations
+from tts_dataset import generate_tts_dataset
 
 OUTPUT_DIR = "outputs"
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
@@ -61,7 +63,7 @@ def run_pipeline(url: str, hf_token: str, emotion_classifier):
     video_dir = run_with_spinner("Saving outputs", save_outputs, title, full_transcript, tagged, OUTPUT_DIR)
 
     print(f"\nDone. Results saved to: {video_dir}")
-    return title, video_dir
+    return title, audio_path, video_dir
 
 
 def main():
@@ -81,7 +83,7 @@ def main():
             continue
 
         try:
-            title, video_dir = run_pipeline(url, hf_token, emotion_classifier)
+            title, audio_path, video_dir = run_pipeline(url, hf_token, emotion_classifier)
         except Exception as e:
             print(f"Error: {e}")
             retry = input("Try another video? (y/n): ").strip().lower()
@@ -89,13 +91,33 @@ def main():
                 break
             continue
 
-        convert = input("\nConvert results to training dataset JSON? (y/n): ").strip().lower()
+        visualize = input("\nGenerate waveform and spectrogram visualizations? (y/n): ").strip().lower()
+        if visualize == "y":
+            try:
+                results_path = os.path.join(video_dir, "results.json")
+                with open(results_path) as f:
+                    segments = json.load(f)
+                run_with_spinner("Generating visualizations", generate_visualizations, audio_path, video_dir, segments)
+                print(f"  Saved waveform.png, mel_spectrogram.png, segment_energy.png")
+            except Exception as e:
+                print(f"Visualization failed: {e}")
+
+        convert = input("\nConvert results to annotation dataset JSON? (y/n): ").strip().lower()
         if convert == "y":
             try:
                 dataset_path = convert_to_dataset(video_dir, title)
-                print(f"Dataset saved to: {dataset_path}")
+                print(f"  Annotation dataset saved to: {dataset_path}")
             except Exception as e:
                 print(f"Dataset conversion failed: {e}")
+
+        tts = input("\nGenerate TTS training dataset with per-segment spectrograms? (y/n): ").strip().lower()
+        if tts == "y":
+            try:
+                dataset_path, count = run_with_spinner("Generating TTS dataset", generate_tts_dataset, audio_path, video_dir, title)
+                print(f"  {count} segments saved to: {dataset_path}")
+                print(f"  Spectrograms saved to: {os.path.join(video_dir, 'spectrograms/')}")
+            except Exception as e:
+                print(f"TTS dataset generation failed: {e}")
 
         view = input("\nView results now? (y/n): ").strip().lower()
         if view == "y":
