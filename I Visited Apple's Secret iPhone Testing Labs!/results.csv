@@ -1,0 +1,281 @@
+start,end,speaker,text,emotion,emotion_score
+0.0,5.0,SPEAKER_00,"So a couple days ago, I dropped a Twitter thread.",neu,1.0
+5.32,6.8,SPEAKER_00,"Yes, I still call it Twitter.",neu,1.0
+6.8,8.86,SPEAKER_00,And I severely underestimated,neu,1.0
+8.86,10.66,SPEAKER_00,how many of you guys would be interested in it.,neu,1.0
+10.66,12.52,SPEAKER_00,But then a lot of the conversation,neu,1.0
+12.52,14.0,SPEAKER_00,that I drove was really interesting,neu,1.0
+14.0,16.16,SPEAKER_00,and a lot of discussions that happened afterward,neu,1.0
+16.16,17.28,SPEAKER_00,were funded by participate in.,neu,1.0
+17.28,20.2,SPEAKER_00,So I figured I would drop even more of the footage here.,neu,1.0
+20.2,24.44,SPEAKER_00,So I'm back with more of my footage and clips,neu,1.0
+24.44,29.2,SPEAKER_00,from my visit to Apple's secret iPhone durability testing labs.,ang,1.0
+29.2,32.4,SPEAKER_00,So if you ever wondered how an iPhone gets water resistance,neu,1.0
+32.4,35.8,SPEAKER_00,tested or drop tested or shaken like crazy,neu,1.0
+35.8,37.48,SPEAKER_00,"before it gets announced on stage,",neu,1.0
+37.48,40.6,SPEAKER_00,these are the labs where all of that happens.,neu,1.0
+40.6,42.24,SPEAKER_00,And then they have to connect the dots,neu,1.0
+42.24,46.36,SPEAKER_00,"between their test results and how they actually build phones,",neu,1.0
+46.36,47.36,SPEAKER_00,which is fascinating.,neu,1.0
+47.36,50.92,SPEAKER_00,So the first thing that I saw was the water resistance testing.,neu,1.0
+50.92,52.32,SPEAKER_00,So I think a lot of us kind of take for granted,neu,1.0
+52.32,54.16,SPEAKER_00,"at this point, most high end smartphones,",neu,1.0
+54.16,58.0,SPEAKER_00,most flagships have IP68 ratings.,neu,1.0
+58.0,59.52,SPEAKER_00,But a lot of people don't actually think about it.,neu,1.0
+59.52,63.16,SPEAKER_00,That is a code where IP stands for Ingress Protection.,ang,1.0
+63.16,65.32,SPEAKER_00,And then the first number is for solids.,ang,0.9882
+65.32,67.64,SPEAKER_00,And then the second number is for liquids.,ang,1.0
+67.64,69.76,SPEAKER_00,And so each of these numbers gets higher and higher,ang,1.0
+69.76,72.0,SPEAKER_00,as it's more protected against Ingress.,ang,1.0
+72.0,74.52,SPEAKER_00,"So some like earbuds or headphones, for example,",neu,1.0
+74.52,76.72,SPEAKER_00,you might see they are IPX4 rated.,ang,0.9988
+76.72,79.12,SPEAKER_00,That just means they're not protected from dust.,ang,1.0
+79.12,82.56,SPEAKER_00,"But from water, they can withstand some light splashes",neu,0.8953
+82.56,83.84,SPEAKER_00,from any direction.,neu,0.9984
+83.84,84.64,SPEAKER_00,So sweat.,neu,0.9594
+84.64,85.48,SPEAKER_00,Great.,ang,1.0
+85.48,88.16,SPEAKER_00,So the iPhones all the way up to the iPhone 6S,ang,1.0
+88.16,91.92,SPEAKER_00,"were not water resistant at all, at least not rated to be.",ang,1.0
+91.92,94.52,SPEAKER_00,"But then the first water resistant iPhone, iPhone 7,",neu,1.0
+94.52,97.28,SPEAKER_00,was IP67 water resistant.,neu,0.9911
+97.28,100.56,SPEAKER_00,"And then now we just kind of, we see everything being IP68,",neu,1.0
+100.56,102.36,SPEAKER_00,meaning it can literally be underwater,ang,1.0
+102.36,103.6,SPEAKER_00,for an extended period of time.,neu,0.9076
+103.6,107.24,SPEAKER_00,And so this is what it looks like to actually test that stuff.,ang,1.0
+107.24,109.28,SPEAKER_00,There's literally specialty equipment,ang,1.0
+109.28,113.16,SPEAKER_00,just to torture phones with water and make sure they can survive.,ang,0.9999
+113.16,115.32,SPEAKER_00,"So lots of companies have these things,",ang,1.0
+115.32,116.84,SPEAKER_00,but it was cool to see it in person.,ang,0.9487
+116.84,119.44,SPEAKER_00,So the lowest level of this test is basically,neu,1.0
+119.44,122.2,SPEAKER_00,a drip ceiling to simulate rain and splashing.,ang,1.0
+122.2,124.0,SPEAKER_00,"So there's no real water pressure here,",neu,1.0
+124.0,127.84,SPEAKER_00,but a pass is good for IPX4 on this test.,neu,1.0
+127.84,130.2,SPEAKER_00,"But then to simulate some water pressure,",neu,1.0
+130.2,133.44,SPEAKER_00,they have these jets that rotate around the device,neu,0.9997
+133.44,135.92,SPEAKER_00,and spray it with water from all angles,neu,1.0
+135.92,140.64,SPEAKER_00,"into the speakers, into the earpiece, into the ports, everything.",ang,1.0
+140.64,143.16,SPEAKER_00,"And if it's able to pass this test,",neu,0.9911
+143.16,144.72,SPEAKER_00,that's good for IPX5.,neu,1.0
+144.72,147.52,SPEAKER_00,"It seems so simple, but it's also pretty cool to see.",neu,1.0
+147.52,149.52,SPEAKER_00,I've never actually watched this happen.,neu,1.0
+149.52,152.64,SPEAKER_00,"To turn it up to 11, they just put the phone on one end",ang,0.9812
+152.64,155.48,SPEAKER_00,and stick basically a literal fire hose on the other end,neu,1.0
+155.48,158.56,SPEAKER_00,and just blast the phone with high pressure water.,neu,1.0
+158.56,161.12,SPEAKER_00,"Kind of looks insane, but if we want our modern smartphones",neu,1.0
+161.12,162.88,SPEAKER_00,"to be able to get splashed from any angle,",neu,1.0
+162.88,165.44,SPEAKER_00,"many times over its lifetime and survive,",neu,1.0
+165.44,167.16,SPEAKER_00,then it has to survive this.,neu,1.0
+167.16,169.6,SPEAKER_00,And then it earns its IPX6 rating.,neu,1.0
+169.6,173.44,SPEAKER_00,"But then finally, for IPX7 and IPX8, that's full submersion.",neu,1.0
+173.44,175.72,SPEAKER_00,"So they have some lockable sealed tanks,",neu,1.0
+175.72,177.4,SPEAKER_00,but some of you may already know that IPX8,neu,1.0
+177.4,179.84,SPEAKER_00,is supposed to be under deep water for a long time.,ang,0.9988
+179.84,182.48,SPEAKER_00,So they actually have this pressurized tank,neu,1.0
+182.48,184.6,SPEAKER_00,where they can turn up the pressure inside,ang,1.0
+184.6,186.84,SPEAKER_00,to simulate different water depths,ang,1.0
+186.84,189.2,SPEAKER_00,and leave phones in there as long as they want.,neu,1.0
+189.2,191.8,SPEAKER_00,"So now, ideally today, if you drop your phone",neu,1.0
+191.8,193.92,SPEAKER_00,in the toilet or spill water on it,neu,1.0
+193.92,196.16,SPEAKER_00,"or drop it in a lake, whatever,",neu,0.9149
+196.16,199.0,SPEAKER_00,"for as long as it's down there, it should survive.",neu,0.9755
+199.0,200.48,SPEAKER_00,"Which again, we kind of take it for granted,",ang,1.0
+200.48,202.28,SPEAKER_00,but that's all the seals and the gas gets,neu,0.9897
+202.28,203.44,SPEAKER_00,none of the adhesives and things,neu,1.0
+203.44,206.0,SPEAKER_00,that go into getting it to pass those tests,ang,1.0
+206.0,208.2,SPEAKER_00,or what get it to pass the real world tests.,ang,1.0
+208.2,210.88,SPEAKER_00,"Now, there is an entire separate type of testing",ang,1.0
+210.88,213.16,SPEAKER_00,that you might have already seen on YouTube,neu,0.7433
+213.16,215.12,SPEAKER_00,that is drop testing.,ang,1.0
+215.12,217.4,SPEAKER_00,And it turns out Apple has been doing their own,ang,1.0
+217.4,220.4,SPEAKER_00,internal drop testing for years now.,ang,1.0
+220.4,221.64,SPEAKER_00,"So it turns out in the same building,",neu,1.0
+221.64,225.44,SPEAKER_00,Apple set up this full on industrial robot by Epson,ang,1.0
+225.44,228.68,SPEAKER_00,that they've programmed to be a drop test robot.,ang,1.0
+228.68,231.24,SPEAKER_00,And then they've set it up in front of these ultra bright lights,neu,0.9177
+231.24,233.52,SPEAKER_00,and super high speed Phantom cameras pointed,ang,1.0
+233.52,237.04,SPEAKER_00,at the exact spot on the ground where the phone will land.,ang,1.0
+237.04,239.76,SPEAKER_00,So the idea here is they can program the robot,neu,1.0
+239.76,243.24,SPEAKER_00,to pick up the phone and drop it onto any surface.,neu,1.0
+249.0,252.04,SPEAKER_00,And then they can have it repeat that exact motion,neu,1.0
+252.04,255.48,SPEAKER_00,and that exact same drop on the exact same angle,neu,1.0
+255.48,258.24,SPEAKER_00,"over and over again, but with different surfaces",neu,1.0
+258.24,259.8,SPEAKER_00,and they can ab test them,neu,1.0
+259.8,261.96,SPEAKER_00,and take a look at exactly what happened.,neu,1.0
+261.96,263.32,SPEAKER_00,"And then those of you who are camera nerds,",neu,1.0
+263.32,266.04,SPEAKER_00,you already know these Phantom cameras are pretty serious.,neu,0.9997
+266.04,267.6,SPEAKER_00,I don't remember the exact frame rate,neu,1.0
+267.6,268.68,SPEAKER_00,"they told me they were shooting at,",neu,0.9999
+268.68,271.12,SPEAKER_00,but it's pretty incredible.,neu,1.0
+271.12,275.56,SPEAKER_00,You can actually see the titanium on this iPhone 15 Pro,ang,1.0
+275.56,278.96,SPEAKER_00,wobble on its first impact with the ground.,ang,0.993
+278.96,280.84,SPEAKER_00,And it's second impact too.,neu,0.9992
+280.84,283.24,SPEAKER_00,"So yeah, they had all kinds of different materials",ang,1.0
+283.24,285.44,SPEAKER_00,"to do drop tests from granite countertops,",ang,1.0
+285.44,289.28,SPEAKER_00,"to marble, to corkboard and wood, et cetera.",neu,1.0
+289.28,291.28,SPEAKER_00,They even had this massive block of asphalt,neu,1.0
+291.28,293.0,SPEAKER_00,"just sitting there, just waiting to see",neu,1.0
+293.0,296.72,SPEAKER_00,how the iPhone reacts to being dropped in the streets.,neu,0.9735
+296.72,298.32,SPEAKER_00,But this is a fascinating setup.,ang,1.0
+298.32,301.64,SPEAKER_00,"Now of course, the fact is most phones still just break",neu,0.9974
+301.64,303.32,SPEAKER_00,immediately when you drop them on the ground.,neu,0.9632
+303.32,305.96,SPEAKER_00,So I kind of wonder how much of this data,ang,1.0
+305.96,309.0,SPEAKER_00,is actually getting translated into real changes,neu,1.0
+309.0,310.84,SPEAKER_00,"of phone design, but it's still cool",ang,1.0
+310.84,312.04,SPEAKER_00,that I got to see all this stuff.,neu,1.0
+312.04,314.56,SPEAKER_00,And then the hardest one to capture for me anyway,neu,0.9912
+314.56,317.4,SPEAKER_00,is the shaking tests.,ang,1.0
+318.32,319.8,SPEAKER_00,"Yeah, it's exactly what it sounds like.",neu,1.0
+319.8,320.64,SPEAKER_00,Shaking tests.,neu,1.0
+320.64,322.32,SPEAKER_00,Apple has rooms full of machines,neu,1.0
+322.32,324.84,SPEAKER_00,that are literally trays of devices,ang,1.0
+324.84,327.88,SPEAKER_00,strapped to a surface that's being shaken,ang,1.0
+327.88,330.92,SPEAKER_00,thousands of times at a specific frequency.,ang,1.0
+330.92,332.16,SPEAKER_00,It's actually kind of hard to record,ang,1.0
+332.16,334.44,SPEAKER_00,"because if my shutter speed is at the right number,",neu,1.0
+334.44,336.88,SPEAKER_00,"it doesn't even really look like anything's moving,",neu,1.0
+336.88,339.28,SPEAKER_00,kind of like how car wheels don't look like they're spinning,neu,1.0
+339.28,340.76,SPEAKER_00,if you have the right camera settings.,neu,1.0
+340.76,343.32,SPEAKER_00,But I dig it a few clips where I put my hand on it,ang,1.0
+343.32,345.28,SPEAKER_00,and you can see it's moving a lot.,neu,1.0
+345.28,347.8,SPEAKER_00,They're using this machine to try to simulate,ang,1.0
+347.8,350.64,SPEAKER_00,years of wear and tear out in the real world.,ang,1.0
+350.64,352.96,SPEAKER_00,Apparently they can program in the frequency,ang,1.0
+352.96,356.2,SPEAKER_00,of a certain motorcycle engine or a car engine,neu,1.0
+356.2,358.96,SPEAKER_00,or subway car or whatever constant vibration,ang,1.0
+358.96,361.0,SPEAKER_00,that they just want to check up on to make sure,ang,1.0
+361.0,363.24,SPEAKER_00,everything holds up to exposure to it,ang,1.0
+363.24,364.4,SPEAKER_00,over a very long time.,ang,1.0
+364.4,365.76,SPEAKER_00,But I really think the most fascinating thing,neu,1.0
+365.76,368.04,SPEAKER_00,about all this testing is they are trying,ang,1.0
+368.04,369.16,SPEAKER_00,before the phone even comes out.,neu,1.0
+369.16,371.84,SPEAKER_00,They're trying to simulate years of wear and tear,ang,1.0
+371.88,373.84,SPEAKER_00,in the real world with real customers,ang,1.0
+374.84,377.92,SPEAKER_00,in a small room under the basement of Apple Park,neu,1.0
+377.92,379.56,SPEAKER_00,with like the machines that they've designed.,neu,1.0
+379.56,382.04,SPEAKER_00,It's a fascinating connection they've got to make.,neu,1.0
+382.04,383.68,SPEAKER_00,And I spoke to John Ternis who's the head,ang,1.0
+383.68,387.08,SPEAKER_00,of a hardware engineering at Apple about this process,neu,0.9987
+387.08,389.84,SPEAKER_00,and he mentioned apparently they go through,ang,0.9996
+389.84,394.16,SPEAKER_00,"sometimes 10,000 iPhones prototypes",ang,1.0
+394.16,396.56,SPEAKER_00,before they actually ship a final phone,ang,0.939
+396.56,398.04,SPEAKER_00,with all this durability testing.,neu,1.0
+398.92,399.76,SPEAKER_00,Which sounds crazy.,neu,0.9971
+399.8,402.0,SPEAKER_00,I don't know what number I thought it was in my head,ang,1.0
+402.0,405.0,SPEAKER_00,"but it seems insane that they'll make 10,000 phones",neu,1.0
+405.0,406.72,SPEAKER_00,to break before they ship one.,ang,1.0
+406.72,408.68,SPEAKER_00,"And actually while I had John there,",ang,1.0
+408.68,410.8,SPEAKER_00,I felt like this was a unique opportunity to ask,neu,0.9999
+410.8,413.88,SPEAKER_00,because I've never really heard people from Apple,ang,1.0
+413.88,417.16,SPEAKER_00,actually speak out about the durability,ang,1.0
+417.16,419.92,SPEAKER_00,but also the repairability of the iPhone.,ang,0.9938
+419.92,423.12,SPEAKER_00,Like we all know Apple's reputation for repairability.,neu,1.0
+423.12,423.96,SPEAKER_00,Not great.,ang,1.0
+423.96,427.28,SPEAKER_00,Like the iPhone is notoriously very difficult to repair.,ang,1.0
+427.28,428.64,SPEAKER_00,But also now it's a little clearer,ang,0.9833
+428.64,430.72,SPEAKER_00,"because the more I've thought about it,",ang,1.0
+430.72,431.82,SPEAKER_00,"the more it feels like,",neu,1.0
+431.82,434.72,SPEAKER_00,I mean Apple's just shown me a ton of durability labs.,ang,1.0
+434.72,438.4,SPEAKER_00,And durability feels like it's directly at odds,ang,1.0
+438.4,440.24,SPEAKER_00,with repairability.,ang,1.0
+440.24,443.48,SPEAKER_00,Like it actually feels like it's basically a sliding scale,neu,1.0
+443.48,446.92,SPEAKER_00,with durability on one side and repairability on the other.,ang,1.0
+446.92,450.0,SPEAKER_00,"And the more durable you want to make your thing,",ang,1.0
+450.0,452.96,SPEAKER_00,the less repairable you're making your thing.,ang,1.0
+452.96,455.28,SPEAKER_00,And all these decisions that go into making,ang,0.9874
+455.28,457.2,SPEAKER_00,and designing a product are kind of pushing it,ang,1.0
+457.2,459.12,SPEAKER_00,back and forth along this scale.,ang,1.0
+459.12,460.52,SPEAKER_00,So take a listen to this.,ang,0.9994
+460.52,462.64,SPEAKER_01,But sometimes for me I find it helpful,neu,1.0
+462.64,463.92,SPEAKER_01,"to kind of think about the book and so like,",neu,1.0
+463.92,466.56,SPEAKER_01,"if you imagine a product that never fails, right?",neu,1.0
+466.56,467.8,SPEAKER_01,It just does a fail.,neu,1.0
+467.8,468.64,SPEAKER_01,Yep.,neu,1.0
+468.64,471.24,SPEAKER_01,And on the other end of product that maybe isn't very reliable,neu,1.0
+471.24,473.0,SPEAKER_01,but it's super easy to repair.,neu,1.0
+473.0,473.84,SPEAKER_01,Right.,neu,1.0
+473.84,475.9,SPEAKER_01,The product that never fails is obviously better,neu,1.0
+475.9,477.8,SPEAKER_00,"for the customer, it's better for the environment.",neu,1.0
+477.8,479.12,SPEAKER_00,"Okay, it's interesting you put it that way",neu,1.0
+479.12,481.4,SPEAKER_00,because on one end you have the product that never fails.,neu,1.0
+481.4,482.64,SPEAKER_00,On the other hand you have the product,neu,1.0
+482.64,485.24,SPEAKER_00,"that can be replaced infinitely,",neu,1.0
+485.24,486.28,SPEAKER_00,but it's not as reliable.,neu,1.0
+486.28,487.12,SPEAKER_00,Yep.,hap,0.9994
+487.12,488.96,SPEAKER_00,That downside of being not as reliable,neu,1.0
+488.96,491.04,SPEAKER_00,comes from being infinitely repairable.,neu,1.0
+491.04,492.76,SPEAKER_00,But I think someone argued that the downside,neu,1.0
+492.76,494.96,SPEAKER_00,of being really hard to repair,neu,1.0
+494.96,497.88,SPEAKER_00,comes from being almost infinitely durable.,neu,1.0
+499.12,502.52,SPEAKER_01,"Sure, but they're not always mutually exclusive.",neu,1.0
+502.52,503.76,SPEAKER_01,Like those are kind of the book ends.,neu,1.0
+503.76,505.88,SPEAKER_01,So let me give you like a couple of examples.,neu,1.0
+505.88,506.72,SPEAKER_01,Yeah.,neu,1.0
+506.72,510.96,SPEAKER_01,I think of battery on an iPhone as being an important one.,neu,1.0
+510.96,513.28,SPEAKER_01,"On an iPhone on any phone, a battery is something",neu,1.0
+513.28,515.24,SPEAKER_01,if you want to extend the life of the product,neu,1.0
+515.24,517.52,SPEAKER_01,but something that's going to need to be replaced.,neu,1.0
+517.52,519.04,SPEAKER_01,Battery is battery-fuer out.,neu,1.0
+520.04,522.16,SPEAKER_01,But as we've been making iPhones for a long time,neu,1.0
+522.16,524.76,SPEAKER_01,"in the early days, one of the most common types",neu,1.0
+524.76,527.0,SPEAKER_01,"of failures was water ingress, right?",neu,1.0
+527.0,529.44,SPEAKER_01,"Where you drop it in the pool,",neu,1.0
+529.44,532.44,SPEAKER_01,"you know, spill your drink on it and the unit fails.",neu,1.0
+532.44,535.36,SPEAKER_01,And so we've been making strides over all those years,neu,1.0
+535.36,537.04,SPEAKER_01,to get better and better and better,neu,1.0
+537.04,539.08,SPEAKER_01,in terms of minimizing those failures,neu,1.0
+539.08,540.96,SPEAKER_01,and on how many years it's been now.,neu,1.0
+540.96,542.76,SPEAKER_01,"But we got to a point of IP68,",neu,1.0
+542.76,545.12,SPEAKER_01,which is kind of a rating for water ingress.,neu,1.0
+545.8,546.6,SPEAKER_01,Really impressive.,neu,1.0
+546.6,548.76,SPEAKER_01,"And I think you get to see some of these tests, right?",neu,1.0
+548.76,551.76,SPEAKER_01,"And it's great because we get these stories of people,",hap,1.0
+551.76,553.8,SPEAKER_01,"you know, literally I dropped my phone in the lake.",neu,1.0
+553.8,555.0,SPEAKER_01,I couldn't get it for two weeks.,neu,1.0
+555.0,555.84,SPEAKER_01,I fished it out.,neu,1.0
+555.84,556.68,SPEAKER_01,It still works.,neu,1.0
+556.68,557.92,SPEAKER_01,They're super excited.,neu,1.0
+557.92,560.76,SPEAKER_01,"That said, to get the product there,",neu,1.0
+560.76,563.52,SPEAKER_01,"you've got to design a lot of seals, adhesives,",neu,1.0
+563.52,565.96,SPEAKER_01,"other things to make it perform that way,",neu,1.0
+565.96,568.24,SPEAKER_01,which makes it a little harder to do that battery repair.,neu,1.0
+568.24,569.6,SPEAKER_01,You still need to do the battery repair.,neu,1.0
+569.6,571.2,SPEAKER_01,So we need to make sure we have solution,neu,1.0
+571.2,573.84,SPEAKER_01,"for customers to do that, which we do.",neu,1.0
+573.84,576.8,SPEAKER_01,But it's objectively better for the customer,neu,1.0
+576.8,578.76,SPEAKER_01,to have that reliability.,neu,1.0
+578.76,580.44,SPEAKER_01,"And it's ultimately better for the planet,",neu,1.0
+580.44,583.0,SPEAKER_01,because the failure rate since we got to that point,neu,1.0
+583.0,584.4,SPEAKER_01,have just dropped.,neu,1.0
+584.4,585.32,SPEAKER_01,"It's plummeted, right?",neu,1.0
+585.32,587.32,SPEAKER_01,The number of repairs that need to happen.,neu,1.0
+587.32,588.36,SPEAKER_01,"And every time you do it in a repair,",ang,1.0
+588.36,590.24,SPEAKER_01,"you're bringing in new materials,",neu,1.0
+590.24,591.84,SPEAKER_01,"you know, to replace whatever grow.",neu,1.0
+591.84,593.92,SPEAKER_01,So you can actually do the math,neu,1.0
+593.92,596.44,SPEAKER_01,"and figure out there's a threshold at which,",neu,1.0
+596.44,598.32,SPEAKER_01,"if I can make it this durable,",neu,1.0
+598.32,601.6,SPEAKER_01,"then it's better to have it a little bit harder to repair,",neu,1.0
+601.6,603.04,SPEAKER_01,because it's going to net out.,neu,1.0
+603.04,603.96,SPEAKER_00,"So yeah, that checks out.",neu,0.9919
+603.96,605.88,SPEAKER_00,I found that kind of interesting.,neu,1.0
+605.88,607.56,SPEAKER_00,We've never really heard anyone from Apple speak,neu,0.6025
+607.56,608.64,SPEAKER_00,directly about this.,neu,1.0
+608.64,611.04,SPEAKER_00,"Now, of course, in a dream world of Apple's goal",ang,1.0
+611.04,614.92,SPEAKER_00,"is to make the ultimate phone that never, ever breaks",ang,1.0
+614.92,617.6,SPEAKER_00,"than they probably shouldn't be making it from glass,",neu,1.0
+617.6,620.56,SPEAKER_00,"because in the words of JerryRig, everything,",neu,1.0
+620.56,622.0,SPEAKER_00,"glass is glass, glass breaks.",neu,1.0
+622.0,623.96,SPEAKER_00,"But still, they're trying to push",ang,1.0
+623.96,625.44,SPEAKER_00,as far towards that end as possible.,ang,0.9782
+625.44,627.4,SPEAKER_00,And it is interesting to hear a little bit,neu,1.0
+627.4,629.08,SPEAKER_00,of the behind the scenes on the philosophy there.,neu,1.0
+629.08,629.88,SPEAKER_00,"But yeah, that's been it.",ang,1.0
+629.88,631.0,SPEAKER_00,That's my behind the scenes look,neu,0.9972
+631.0,633.04,SPEAKER_00,at Apple's durability testing labs,neu,1.0
+633.04,634.4,SPEAKER_00,that we've never seen before.,neu,1.0
+634.4,636.24,SPEAKER_00,"Make sure you subscribe to see more stuff,",neu,1.0
+636.24,638.56,SPEAKER_00,very cool like this coming up soon.,neu,1.0
+638.56,641.68,SPEAKER_00,And let me know what you think about this sliding scale,neu,1.0
+641.68,643.92,SPEAKER_00,of durability versus repair.,neu,1.0
+643.92,646.32,SPEAKER_00,Catch you guys in the next one.,neu,1.0
+646.32,647.16,SPEAKER_00,Peace.,neu,1.0
