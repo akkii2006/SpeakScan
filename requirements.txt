@@ -7,3 +7,5 @@ yt-dlp
 ffmpeg-python
 librosa
 matplotlib
+speechbrain
+numpy
