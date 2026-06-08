@@ -137,3 +137,11 @@ outputs/
 - Whisper model size can be changed in transcriber.py (tiny, base, small, medium, large)
 - Mel spectrograms are generated at 22050Hz, 80 mel bands, matching standard TTS training configurations
 - PyTorch must be installed matching your CUDA version - see https://pytorch.org/get-started/locally
+- A sample output is in the output folder
+
+
+## Output Images
+
+![waveform](outputs/I%20Visited%20Apple's%20Secret%20iPhone%20Testing%20Labs!/waveform.png)
+![Segment Energy](<outputs/I Visited Apple's Secret iPhone Testing Labs!/segment_energy.png>)
+![Mel Spectrogram](<outputs/I Visited Apple's Secret iPhone Testing Labs!/mel_spectrogram.png>)
