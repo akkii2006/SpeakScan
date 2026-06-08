@@ -7,17 +7,14 @@ def save_outputs(title: str, transcript: str, segments: list[dict], base_output_
     video_dir = os.path.join(base_output_dir, title)
     os.makedirs(video_dir, exist_ok=True)
 
-    transcript_path = os.path.join(video_dir, "transcript.txt")
-    with open(transcript_path, "w", encoding="utf-8") as f:
+    with open(os.path.join(video_dir, "transcript.txt"), "w", encoding="utf-8") as f:
         f.write(transcript)
 
-    json_path = os.path.join(video_dir, "results.json")
-    with open(json_path, "w", encoding="utf-8") as f:
+    with open(os.path.join(video_dir, "results.json"), "w", encoding="utf-8") as f:
         json.dump(segments, f, indent=2, ensure_ascii=False)
 
-    csv_path = os.path.join(video_dir, "results.csv")
     if segments:
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        with open(os.path.join(video_dir, "results.csv"), "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=segments[0].keys())
             writer.writeheader()
             writer.writerows(segments)

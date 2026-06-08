@@ -16,7 +16,11 @@ def download_audio(url: str, output_dir: str) -> tuple[str, str]:
         raise RuntimeError(f"Failed to fetch video info: {result.stderr.strip()}")
 
     title = result.stdout.strip().replace("/", "_").replace("\\", "_")
-    audio_path = os.path.join(output_dir, f"{title}.wav")
+
+    video_dir = os.path.join(output_dir, title)
+    os.makedirs(video_dir, exist_ok=True)
+
+    audio_path = os.path.join(video_dir, f"{title}.wav")
 
     dl_cmd = [
         "yt-dlp",

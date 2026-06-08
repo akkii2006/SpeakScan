@@ -3,6 +3,15 @@ import threading
 import itertools
 import time
 import json
+import warnings
+import logging
+
+warnings.filterwarnings("ignore")
+logging.disable(logging.CRITICAL)
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["SPEECHBRAIN_VERBOSITY"] = "error"
+
 from downloader import download_audio
 from transcriber import transcribe, get_full_transcript, get_segments
 from diarizer import diarize, merge_diarization_with_transcript
@@ -19,7 +28,7 @@ HF_TOKEN = os.environ.get("HF_TOKEN", "")
 def get_hf_token() -> str:
     token = HF_TOKEN
     if not token:
-        token = input("Enter your HuggingFace token (needed for diarization): ").strip()
+        token = input("Enter your HuggingFace token: ").strip()
     return token
 
 
@@ -57,13 +66,20 @@ def run_pipeline(url: str, hf_token: str, emotion_classifier):
     print(f"  Speakers found: {len(set(s['speaker'] for s in diar_segments))}")
 
     merged = merge_diarization_with_transcript(diar_segments, transcript_segments)
+    tagged = run_with_spinner("Tagging emotions", tag_emotions, merged, emotion_classifier, audio_path)
+    video_dir = os.path.join(OUTPUT_DIR, title)
+    run_with_spinner("Saving outputs", save_outputs, title, full_transcript, tagged, OUTPUT_DIR)
 
-    tagged = run_with_spinner("Tagging emotions", tag_emotions, merged, emotion_classifier)
-
-    video_dir = run_with_spinner("Saving outputs", save_outputs, title, full_transcript, tagged, OUTPUT_DIR)
-
-    print(f"\nDone. Results saved to: {video_dir}")
     return title, audio_path, video_dir
+
+
+def process_all(title: str, audio_path: str, video_dir: str):
+    with open(os.path.join(video_dir, "results.json")) as f:
+        segments = json.load(f)
+    run_with_spinner("Generating visualizations", generate_visualizations, audio_path, video_dir, segments)
+    convert_to_dataset(video_dir, title)
+    dataset_path, count = run_with_spinner("Generating TTS dataset", generate_tts_dataset, audio_path, video_dir, title)
+    print(f"  Done. {count} TTS segments saved to: {video_dir}")
 
 
 def main():
@@ -76,57 +92,45 @@ def main():
     emotion_classifier = load_emotion_classifier()
     print("Ready.\n")
 
-    while True:
+    mode = input("Run mode - (s)ingle or (b)atch? ").strip().lower()
+
+    if mode in ("batch", "b"):
+        urls = []
+        print("Enter YouTube URLs one by one. Type 'done' when finished:")
+        i = 1
+        while True:
+            url = input(f"  URL {i}: ").strip()
+            if url.lower() == "done":
+                break
+            if url:
+                urls.append(url)
+                i += 1
+
+        if not urls:
+            print("No URLs entered.")
+            return
+
+        print(f"\nProcessing {len(urls)} video(s)...")
+        for idx, url in enumerate(urls, 1):
+            print(f"\n[{idx}/{len(urls)}] {url}")
+            try:
+                title, audio_path, video_dir = run_pipeline(url, hf_token, emotion_classifier)
+                process_all(title, audio_path, video_dir)
+            except Exception as e:
+                print(f"  Error: {e}. Skipping.")
+
+    else:
         url = input("Enter YouTube URL: ").strip()
         if not url:
-            print("No URL entered. Try again.")
-            continue
-
+            print("No URL entered.")
+            return
         try:
             title, audio_path, video_dir = run_pipeline(url, hf_token, emotion_classifier)
+            process_all(title, audio_path, video_dir)
         except Exception as e:
             print(f"Error: {e}")
-            retry = input("Try another video? (y/n): ").strip().lower()
-            if retry != "y":
-                break
-            continue
 
-        visualize = input("\nGenerate waveform and spectrogram visualizations? (y/n): ").strip().lower()
-        if visualize == "y":
-            try:
-                results_path = os.path.join(video_dir, "results.json")
-                with open(results_path) as f:
-                    segments = json.load(f)
-                run_with_spinner("Generating visualizations", generate_visualizations, audio_path, video_dir, segments)
-                print(f"  Saved waveform.png, mel_spectrogram.png, segment_energy.png")
-            except Exception as e:
-                print(f"Visualization failed: {e}")
-
-        convert = input("\nConvert results to annotation dataset JSON? (y/n): ").strip().lower()
-        if convert == "y":
-            try:
-                dataset_path = convert_to_dataset(video_dir, title)
-                print(f"  Annotation dataset saved to: {dataset_path}")
-            except Exception as e:
-                print(f"Dataset conversion failed: {e}")
-
-        tts = input("\nGenerate TTS training dataset with per-segment spectrograms? (y/n): ").strip().lower()
-        if tts == "y":
-            try:
-                dataset_path, count = run_with_spinner("Generating TTS dataset", generate_tts_dataset, audio_path, video_dir, title)
-                print(f"  {count} segments saved to: {dataset_path}")
-                print(f"  Spectrograms saved to: {os.path.join(video_dir, 'spectrograms/')}")
-            except Exception as e:
-                print(f"TTS dataset generation failed: {e}")
-
-        view = input("\nView results now? (y/n): ").strip().lower()
-        if view == "y":
-            view_results(video_dir)
-
-        again = input("\nProcess another video? (y/n): ").strip().lower()
-        if again != "y":
-            print("Exiting SpeakScan.")
-            break
+    print("\nExiting SpeakScan.")
 
 
 if __name__ == "__main__":
