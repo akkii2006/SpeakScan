@@ -29,12 +29,6 @@ GitHub: https://github.com/akkii2006/SpeakScan
 
 **Speech research** - Waveform and spectrogram visualizations alongside per-segment energy make it easy to analyze speech patterns, pacing, and emotional variation across a recording.
 
----
-
-## Platform notes
-
-- Linux and Windows are the primary supported platforms.
-- macOS users may encounter issues with pyannote, torchaudio, or ffmpeg depending on their environment. These are known and will be addressed in the rewrite. Manual workarounds may be needed in the meantime.
 
 ---
 
@@ -168,7 +162,7 @@ outputs/
 ---
 
 ## Notes
-
+- MacOS users must run 'brew install ffmpeg yt-dlp' before running         
 - GPU is used automatically if available
 - Whisper model size can be changed in transcriber.py (tiny, base, small, medium, large)
 - Mel spectrograms are generated at 22050Hz, 80 mel bands, matching standard TTS training configurations
