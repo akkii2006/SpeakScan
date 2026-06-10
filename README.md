@@ -4,8 +4,6 @@ Audio pipeline that downloads YouTube videos, transcribes them, identifies speak
 
 GitHub: https://github.com/akkii2006/SpeakScan
 
-> Note: A full rewrite is currently in progress to improve usability, cross-platform support, and overall reliability. The current version works but may require manual setup steps depending on your environment.
-
 ---
 
 ## What it does
