@@ -8,25 +8,30 @@ GitHub: https://github.com/akkii2006/SpeakScan
 
 ## What it does
 
-1. Downloads audio from a YouTube URL using yt-dlp
+1. Downloads audio from a YouTube URL (or expands a playlist/channel URL into individual videos) using yt-dlp
 2. Transcribes the audio using Whisper
 3. Runs speaker diarization using pyannote to identify who spoke when
 4. Tags each segment with an emotion label using a wav2vec2 classifier trained on IEMOCAP
-5. Saves a transcript, structured JSON, and CSV to an output folder per video
-6. Generates waveform, mel spectrogram, and energy visualizations for the full audio
-7. Exports an annotation dataset JSON
-8. Generates a full TTS training dataset - per-segment mel spectrograms as .npy files paired with text, speaker, and emotion labels
+5. Evaluates audio quality per segment (SNR, clipping, overlapping speech) and flags low-quality segments
+6. Saves a transcript, structured JSON, and CSV to an output folder per video
+7. Generates waveform, mel spectrogram, segment energy, and emotion timeline visualizations for the full audio
+8. Computes dataset stats: total duration, per-speaker talk time and turn counts, emotion distribution
+9. Extracts keywords/topics from the transcript
+10. Exports an annotation dataset JSON, with optional text normalization (lowercase, punctuation removal, number expansion)
+11. Generates a full TTS training dataset - per-segment mel spectrograms as .npy files paired with text, speaker, and emotion labels, with optional quality filtering
+12. Builds a self-contained HTML report combining the transcript, visualizations, stats, and keywords, which can be opened in your browser automatically
 
 ---
 
 ## Use cases
 
-**TTS model training** - The TTS dataset pairs each transcript segment with its mel spectrogram (.npy), speaker ID, and emotion label. This is the input-output format used by models like Tacotron and VITS: text in, spectrogram out. The pipeline generates the full dataset automatically, covering every segment in the audio with a corresponding spectrogram file ready for training.
+**TTS model training** - The TTS dataset pairs each transcript segment with its mel spectrogram (.npy), speaker ID, and emotion label. This is the input-output format used by models like Tacotron and VITS: text in, spectrogram out. The pipeline generates the full dataset automatically, covering every segment in the audio with a corresponding spectrogram file ready for training. Low-quality segments (low SNR, clipping, heavy speaker overlap) can be filtered out automatically so they don't degrade training.
 
-**ASR dataset construction** - The annotation dataset pairs timestamped transcripts with speaker labels and emotion tags, ready for fine-tuning ASR models on specific speaker styles or emotional speech.
+**ASR dataset construction** - The annotation dataset pairs timestamped transcripts with speaker labels and emotion tags, ready for fine-tuning ASR models on specific speaker styles or emotional speech. Optional text normalization (lowercase, punctuation stripping, number expansion) lets you match the text format your training pipeline expects.
 
-**Speech research** - Waveform and spectrogram visualizations alongside per-segment energy make it easy to analyze speech patterns, pacing, and emotional variation across a recording.
+**Speech research** - Waveform, spectrogram, segment energy, and emotion timeline visualizations make it easy to analyze speech patterns, pacing, and emotional variation across a recording. Speaker talk-time stats and emotion distributions give a quick read on conversation dynamics.
 
+**Playlist/channel processing** - Pass a playlist or channel URL and SpeakScan will expand it into individual videos and process them all in batch.
 
 ---
 
@@ -48,7 +53,7 @@ The diarization pipeline uses gated models on HuggingFace. You need to visit eac
 - https://huggingface.co/pyannote/segmentation-3.0
 - https://huggingface.co/pyannote/speaker-diarization-community-1
 
-Once accepted, generate a token at https://huggingface.co/settings/tokens. You will be prompted to enter it when you run the pipeline.
+Once accepted, generate a token at https://huggingface.co/settings/tokens. You can set it as an environment variable (`HF_TOKEN`) or enter it when prompted.
 
 ---
 
@@ -58,7 +63,17 @@ Once accepted, generate a token at https://huggingface.co/settings/tokens. You w
 python main.py
 ```
 
-The pipeline will ask for your HuggingFace token, then prompt you for a YouTube URL. You can run it in single or batch mode. After processing, outputs are saved automatically.
+The pipeline will:
+
+1. Ask for your HuggingFace token (if `HF_TOKEN` is not set)
+2. Load the emotion classifier and Whisper model (first run downloads ~1GB of weights, one-time cost)
+3. Ask for single or batch mode
+4. Prompt for a YouTube URL (or URLs in batch mode) - playlist/channel URLs are automatically expanded into individual videos
+5. Ask for pipeline configuration:
+   - Enable audio quality filtering (default: yes)
+   - Lowercase text, remove punctuation, expand numbers for dataset exports (default: no)
+6. Process each video through the full pipeline
+7. Ask whether to open the generated HTML report(s) in your browser
 
 ---
 
@@ -68,13 +83,17 @@ The pipeline will ask for your HuggingFace token, then prompt you for a YouTube 
 outputs/
   {video_title}/
     transcript.txt            full video transcript
-    results.json              segments with speaker, emotion, timestamps
+    results.json              segments with speaker, emotion, timestamps, quality flags
     results.csv               same data in CSV format
     waveform.png              full audio waveform with speaker segments color-coded
     mel_spectrogram.png       mel spectrogram of the full audio
     segment_energy.png        RMS energy per segment over time
+    emotion_timeline.png       emotion per segment over time, sized by confidence, colored by speaker
+    stats.json                dataset stats, speaker talk-time, emotion distribution, emotion timeline data
+    keywords.json             extracted keywords/topics
     dataset.json              annotation dataset
     tts_dataset.json          TTS training dataset
+    report.html               self-contained HTML report (transcript + visualizations + stats + keywords)
     spectrograms/
       seg_0000.npy            mel spectrogram for segment 0
       seg_0001.npy            mel spectrogram for segment 1
@@ -91,7 +110,11 @@ outputs/
     "speaker": "SPEAKER_00",
     "text": "So a couple days ago, I dropped a Twitter thread.",
     "emotion": "neu",
-    "emotion_score": 1.0
+    "emotion_score": 1.0,
+    "overlap_ratio": 0.0,
+    "snr_db": 18.4,
+    "quality_flags": [],
+    "quality_ok": true
   },
   {
     "start": 5.32,
@@ -99,7 +122,11 @@ outputs/
     "speaker": "SPEAKER_00",
     "text": "Yes, I still call it Twitter.",
     "emotion": "neu",
-    "emotion_score": 1.0
+    "emotion_score": 1.0,
+    "overlap_ratio": 0.0,
+    "snr_db": 17.9,
+    "quality_flags": [],
+    "quality_ok": true
   }
 ]
 ```
@@ -113,21 +140,27 @@ outputs/
     "start": 0.0,
     "end": 5.0,
     "speaker": "SPEAKER_00",
-    "text": "So a couple days ago, I dropped a Twitter thread.",
+    "text": "so a couple days ago i dropped a twitter thread",
+    "raw_text": "So a couple days ago, I dropped a Twitter thread.",
     "emotion": "neu",
-    "emotion_score": 1.0
+    "emotion_score": 1.0,
+    "quality_flags": []
   },
   {
     "audio_source": "video_title",
     "start": 5.32,
     "end": 6.8,
     "speaker": "SPEAKER_00",
-    "text": "Yes, I still call it Twitter.",
+    "text": "yes i still call it twitter",
+    "raw_text": "Yes, I still call it Twitter.",
     "emotion": "neu",
-    "emotion_score": 1.0
+    "emotion_score": 1.0,
+    "quality_flags": []
   }
 ]
 ```
+
+`text` reflects whatever normalization options were chosen (lowercase, punctuation removal, number expansion). `raw_text` always preserves the original transcribed text.
 
 ### tts_dataset.json format
 
@@ -139,15 +172,55 @@ outputs/
     "start": 0.0,
     "end": 5.0,
     "speaker": "SPEAKER_00",
-    "text": "So a couple days ago, I dropped a Twitter thread.",
+    "text": "so a couple days ago i dropped a twitter thread",
+    "raw_text": "So a couple days ago, I dropped a Twitter thread.",
     "emotion": "neu",
     "emotion_score": 1.0,
+    "quality_flags": [],
     "spectrogram": "outputs/video_title/spectrograms/seg_0000.npy",
     "sample_rate": 22050,
     "n_mels": 80
   }
 ]
 ```
+
+If audio quality filtering is enabled, segments flagged with quality issues (low SNR, clipping, or excessive speaker overlap) are excluded from both `dataset.json` and `tts_dataset.json`, but remain visible (with their flags) in `results.json`.
+
+### stats.json format
+
+```json
+{
+  "total_duration_seconds": 1840.5,
+  "total_duration_hours": 0.51,
+  "num_segments": 627,
+  "avg_segment_length_seconds": 2.93,
+  "num_speakers": 3,
+  "emotion_distribution": {
+    "neu": { "count": 301, "percent": 48.01 },
+    "ang": { "count": 254, "percent": 40.51 },
+    "hap": { "count": 72, "percent": 11.48 }
+  },
+  "speaker_stats": {
+    "SPEAKER_00": { "talk_time_seconds": 1414.5, "talk_time_percent": 76.85, "turn_count": 47 },
+    "SPEAKER_01": { "talk_time_seconds": 425.3, "talk_time_percent": 23.1, "turn_count": 46 },
+    "UNKNOWN": { "talk_time_seconds": 0.9, "talk_time_percent": 0.05, "turn_count": 1 }
+  },
+  "emotion_by_speaker": { ... },
+  "emotion_timeline": [ ... ]
+}
+```
+
+### keywords.json format
+
+```json
+[
+  { "keyword": "Apple", "score": 0.0123 },
+  { "keyword": "iphone", "score": 0.0156 },
+  { "keyword": "job", "score": 0.0341 }
+]
+```
+
+Lower YAKE scores indicate more relevant keywords.
 
 ---
 
@@ -156,20 +229,24 @@ outputs/
 - Transcription: [openai/whisper](https://github.com/openai/whisper) (base by default)
 - Diarization: [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
 - Emotion classification: [speechbrain/emotion-recognition-wav2vec2-IEMOCAP](https://huggingface.co/speechbrain/emotion-recognition-wav2vec2-IEMOCAP)
+- Keyword extraction: [YAKE](https://github.com/LIAAD/yake)
 
 ---
 
 ## Notes
-- MacOS users must run 'brew install ffmpeg yt-dlp' before running         
+
+- MacOS users must run `brew install ffmpeg yt-dlp` before running
 - GPU is used automatically if available
 - Whisper model size can be changed in transcriber.py (tiny, base, small, medium, large)
 - Mel spectrograms are generated at 22050Hz, 80 mel bands, matching standard TTS training configurations
 - PyTorch must be installed matching your CUDA version - see https://pytorch.org/get-started/locally
+- "UNKNOWN" speaker labels can appear for segments where no diarized speech overlaps the transcript segment
 
 ---
 
 ## Output Images
 
-![waveform](outputs/I%20Visited%20Apple's%20Secret%20iPhone%20Testing%20Labs!/waveform.png)
-![Segment Energy](<outputs/I Visited Apple's Secret iPhone Testing Labs!/segment_energy.png>)
-![Mel Spectrogram](<outputs/I Visited Apple's Secret iPhone Testing Labs!/mel_spectrogram.png>)
+![Waveform](<outputs/I Found North Korean Spies on Discord…/waveform.png>)
+![Segment Energy](<outputs/I Found North Korean Spies on Discord…/segment_energy.png>)
+![Mel Spectrogram](<outputs/I Found North Korean Spies on Discord…/mel_spectrogram.png>)
+![Emotion Timeline](<outputs/I Found North Korean Spies on Discord…/emotion_timeline.png>)
