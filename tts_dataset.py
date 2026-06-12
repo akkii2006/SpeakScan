@@ -3,8 +3,12 @@ import json
 import numpy as np
 import librosa
 
+from text_normalizer import normalize_text
 
-def generate_tts_dataset(audio_path: str, video_dir: str, title: str) -> str:
+
+def generate_tts_dataset(audio_path: str, video_dir: str, title: str,
+                          normalize_config: dict | None = None,
+                          filter_quality: bool = True) -> tuple[str, int]:
     results_path = os.path.join(video_dir, "results.json")
 
     if not os.path.exists(results_path):
@@ -12,6 +16,8 @@ def generate_tts_dataset(audio_path: str, video_dir: str, title: str) -> str:
 
     with open(results_path, "r", encoding="utf-8") as f:
         segments = json.load(f)
+
+    normalize_config = normalize_config or {}
 
     y, sr = librosa.load(audio_path, sr=22050)
 
@@ -22,6 +28,9 @@ def generate_tts_dataset(audio_path: str, video_dir: str, title: str) -> str:
     for i, seg in enumerate(segments):
         text = seg.get("text", "").strip()
         if not text:
+            continue
+
+        if filter_quality and not seg.get("quality_ok", True):
             continue
 
         start_sample = int(seg["start"] * sr)
@@ -46,15 +55,24 @@ def generate_tts_dataset(audio_path: str, video_dir: str, title: str) -> str:
         spec_path = os.path.join(spec_dir, spec_filename)
         np.save(spec_path, mel_db)
 
+        normalized_text = normalize_text(
+            text,
+            lowercase=normalize_config.get("lowercase", False),
+            remove_punctuation=normalize_config.get("remove_punctuation", False),
+            expand_nums=normalize_config.get("expand_numbers", False)
+        )
+
         dataset.append({
             "audio_source": title,
             "segment_id": i,
             "start": seg["start"],
             "end": seg["end"],
             "speaker": seg.get("speaker", "UNKNOWN"),
-            "text": text,
+            "text": normalized_text,
+            "raw_text": text,
             "emotion": seg.get("emotion", "neutral"),
             "emotion_score": seg.get("emotion_score", 0.0),
+            "quality_flags": seg.get("quality_flags", []),
             "spectrogram": spec_path,
             "sample_rate": sr,
             "n_mels": 80

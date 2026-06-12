@@ -22,6 +22,13 @@ def save_outputs(title: str, transcript: str, segments: list[dict], base_output_
     return video_dir
 
 
+def update_results(video_dir: str, segments: list[dict]) -> str:
+    results_path = os.path.join(video_dir, "results.json")
+    with open(results_path, "w", encoding="utf-8") as f:
+        json.dump(segments, f, indent=2, ensure_ascii=False)
+    return results_path
+
+
 def view_results(video_dir: str):
     transcript_path = os.path.join(video_dir, "transcript.txt")
     results_path = os.path.join(video_dir, "results.json")

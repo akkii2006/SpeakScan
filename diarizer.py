@@ -25,6 +25,23 @@ def diarize(audio_path: str, hf_token: str) -> list[dict]:
     return segments
 
 
+def _overlap_ratio(start: float, end: float, speaker: str, diar_segments: list[dict]) -> float:
+    duration = end - start
+    if duration <= 0:
+        return 0.0
+
+    overlap_time = 0.0
+    for d_seg in diar_segments:
+        if d_seg["speaker"] == speaker:
+            continue
+
+        overlap_start = max(start, d_seg["start"])
+        overlap_end = min(end, d_seg["end"])
+        overlap_time += max(0.0, overlap_end - overlap_start)
+
+    return overlap_time / duration
+
+
 def merge_diarization_with_transcript(diar_segments: list[dict], transcript_segments: list[dict]) -> list[dict]:
     merged = []
 
@@ -47,7 +64,9 @@ def merge_diarization_with_transcript(diar_segments: list[dict], transcript_segm
             "start": t_start,
             "end": t_end,
             "speaker": speaker,
-            "text": t_seg["text"]
+            "text": t_seg["text"],
+            # fraction of this segment's duration where another speaker was also active
+            "overlap_ratio": round(_overlap_ratio(t_start, t_end, speaker, diar_segments), 3)
         })
 
     return merged

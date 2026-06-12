@@ -15,6 +15,7 @@ def generate_visualizations(audio_path: str, output_dir: str, segments: list[dic
     _plot_waveform(y, sr, segments, output_dir)
     _plot_mel_spectrogram(y, sr, output_dir)
     _plot_segment_energy(y, sr, segments, output_dir)
+    _plot_emotion_timeline(segments, output_dir)
 
 
 def _plot_waveform(y, sr, segments, output_dir):
@@ -69,4 +70,43 @@ def _plot_segment_energy(y, sr, segments, output_dir):
     ax.set_title("Segment Energy over Time")
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "segment_energy.png"), dpi=150)
+    plt.close()
+
+
+def _plot_emotion_timeline(segments, output_dir):
+    if not segments:
+        return
+
+    emotions = sorted({s.get("emotion", "neutral") for s in segments})
+    emotion_index = {e: i for i, e in enumerate(emotions)}
+
+    colors = plt.cm.tab10.colors
+    speakers = sorted({s.get("speaker", "UNKNOWN") for s in segments})
+    speaker_color = {sp: colors[i % len(colors)] for i, sp in enumerate(speakers)}
+
+    fig, ax = plt.subplots(figsize=(14, 2.5 + 0.4 * len(emotions)))
+
+    for seg in segments:
+        emotion = seg.get("emotion", "neutral")
+        speaker = seg.get("speaker", "UNKNOWN")
+        midpoint = (seg["start"] + seg["end"]) / 2
+        score = seg.get("emotion_score", 0.0)
+        # marker size scales with classifier confidence
+        size = 30 + 200 * score
+
+        ax.scatter(midpoint, emotion_index[emotion], s=size, color=speaker_color[speaker], alpha=0.7)
+
+    ax.set_yticks(range(len(emotions)))
+    ax.set_yticklabels(emotions)
+    ax.set_xlabel("Time (s)")
+    ax.set_title("Emotion Timeline (marker size = confidence, color = speaker)")
+
+    handles = [
+        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=speaker_color[sp], markersize=8)
+        for sp in speakers
+    ]
+    ax.legend(handles, speakers, loc="upper right", fontsize=8)
+
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "emotion_timeline.png"), dpi=150)
     plt.close()

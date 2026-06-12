@@ -1,8 +1,11 @@
 import whisper
 
 
-def transcribe(audio_path: str, model_size: str = "base") -> dict:
-    model = whisper.load_model(model_size)
+def load_whisper_model(model_size: str = "base"):
+    return whisper.load_model(model_size)
+
+
+def transcribe(audio_path: str, model) -> dict:
     result = model.transcribe(audio_path)
     return result
 

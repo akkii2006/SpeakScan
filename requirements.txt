@@ -9,3 +9,5 @@ librosa==0.11.0
 matplotlib==3.10.9
 speechbrain==1.1.0
 numpy==2.4.6
+num2words
+yake
