@@ -1,0 +1,628 @@
+start,end,speaker,text,overlap_ratio,emotion,emotion_score
+0.0,4.0,SPEAKER_00,I want to tell you guys a story that happened recently on how I was looking for a job on,0.0,neu,1.0
+4.0,9.84,SPEAKER_00,Discord freelancing servers and how that led to me on the phone with a North Korean spy.,0.0,ang,0.9944
+9.84,15.24,SPEAKER_00,Potentially exposing how North Korea uses Discord to recruit people to work for North Korea.,0.0,ang,1.0
+15.24,18.28,SPEAKER_00,"It sounds like a lot, but we're going to ease into it because the way this whole entire",0.0,ang,1.0
+18.28,22.32,SPEAKER_00,video started is I just wanted to look at Discord freelancing servers and just talk about,0.0,ang,1.0
+22.32,24.0,SPEAKER_00,scams and troll scammers.,0.0,neu,1.0
+24.0,25.76,SPEAKER_00,So things start off pretty innocent.,0.0,ang,1.0
+25.76,30.04,SPEAKER_00,I'm looking for English collars that slash translators from creator who's online right,0.0,ang,0.9998
+30.04,31.04,SPEAKER_00,now.,0.0,neu,1.0
+31.04,33.24,SPEAKER_00,Hopefully I get a job so I can pay off all that alimony.,0.0,neu,1.0
+33.24,34.64,SPEAKER_00,Thanks for your apply.,0.0,ang,1.0
+34.64,35.64,SPEAKER_00,Where are you from?,0.0,neu,1.0
+35.64,36.64,SPEAKER_00,Hello the creator.,0.0,neu,0.9558
+36.64,37.64,SPEAKER_00,I am from America.,0.0,ang,1.0
+37.64,38.64,SPEAKER_00,What is your job?,0.0,neu,1.0
+38.64,39.64,SPEAKER_00,Camping.,0.0,ang,0.9928
+39.64,42.04,SPEAKER_00,But that's been dying down recently so I'm looking for a new job.,0.0,neu,1.0
+42.04,45.76,SPEAKER_00,Especially since my wife recently divorced me over my work so I'm trying to win her back.,0.0,neu,0.9967
+45.76,47.52,SPEAKER_00,Could you tell me more information about the job?,0.0,neu,0.9997
+47.52,51.72,SPEAKER_00,I am a CTO of an IT agency based on Canada.,0.0,ang,1.0
+51.72,53.84,SPEAKER_00,We are going to cover it field in America.,0.0,ang,1.0
+53.84,56.64,SPEAKER_00,For ambitious goal we need help from USA men.,0.0,ang,1.0
+56.64,58.56,SPEAKER_00,Have you ever heard of Upwork.com?,0.0,ang,1.0
+58.56,59.56,SPEAKER_00,I have now.,0.0,neu,1.0
+59.56,64.32,SPEAKER_00,Upwork.com is a website like Fiverr where basically you just find people to do work for you.,0.0,neu,0.9833
+64.32,68.24,SPEAKER_00,So creator tells me that he liked me to create an upwork account and rent it to him and he's,0.0,ang,1.0
+68.24,71.76,SPEAKER_00,going to pay me 10% of its income every month and he also says that he's going to do the,0.0,ang,1.0
+71.76,74.12,SPEAKER_00,same thing with my LinkedIn account as well.,0.0,ang,1.0
+74.12,77.56,SPEAKER_00,Now this is actually a pretty common scam on LinkedIn and Upwork.,0.0,ang,1.0
+77.56,81.32,SPEAKER_00,What they will do is they will actually pay you money to rent your LinkedIn account and,0.0,ang,1.0
+81.32,82.96,SPEAKER_00,scam people on LinkedIn.,0.0,neu,0.9997
+82.96,86.12,SPEAKER_00,"Now the way that the scam works is that the job seekers, the people that are getting",0.0,ang,0.9856
+86.12,90.44,SPEAKER_00,"scammed, will get contacted by scammers who pose as hiring managers or recruiters and",0.0,ang,1.0
+90.44,94.88,SPEAKER_00,the accounts that they use to pretend to be a hiring manager or a recruiter is your,0.0,ang,1.0
+94.88,95.88,SPEAKER_00,account.,0.0,neu,1.0
+95.88,99.64,SPEAKER_00,"What these scammers will do is go through and talk the talk with these job seekers, going",0.0,ang,1.0
+99.64,103.44,SPEAKER_00,"through a virtual interview, receiving a job offer and what ends up happening is that",0.0,ang,1.0
+103.44,107.08,SPEAKER_00,they're asked to provide personal information such as your social insurance number which,0.0,ang,0.9628
+107.08,111.04,SPEAKER_00,is Canada's version of your social security number and your driver's license which can,0.0,ang,1.0
+111.12,113.08,SPEAKER_00,all lead to identity theft.,0.0,ang,1.0
+113.08,118.72,SPEAKER_00,"As Mr. Creator is using your Upwork or LinkedIn account to scam people, you get 10% of these",0.0,ang,1.0
+118.72,124.44,SPEAKER_00,fraudulent earnings if he actually does pay you but all of the scam is under your LinkedIn,0.0,ang,1.0
+124.44,129.0,SPEAKER_00,account which is under your name or your Upwork account which is under your name because,0.0,ang,1.0
+129.0,132.44,SPEAKER_00,to sign up for these services you need to have ID verification.,0.0,neu,1.0
+132.44,136.24,SPEAKER_00,I'm just going to say if you're in the situation where your LinkedIn account with your whole,0.0,ang,1.0
+136.24,140.48,SPEAKER_00,"account name in it is being used to scam people and you get paid for it, a good look",0.0,ang,1.0
+140.48,143.32,SPEAKER_00,trying to explain that to any law enforcement.,0.0,neu,1.0
+143.32,146.88,SPEAKER_00,"And again, when you sign up for these websites you need to provide your ID and there's a",0.0,ang,1.0
+146.88,150.72,SPEAKER_00,pretty good chance that Creator here is going to ask for your ID if they just want to steal,0.0,ang,1.0
+150.72,151.88,SPEAKER_00,your identity straight up.,0.0,ang,1.0
+151.88,155.96,SPEAKER_00,"Now since I didn't want to get my identity stolen yet, I decided to reach out to a couple",0.0,ang,0.9998
+155.96,160.96,SPEAKER_00,of more people on Discord about their job opportunities and these people started to lead,0.0,ang,1.0
+160.96,163.28,SPEAKER_00,me towards good old North Korea.,0.0,neu,0.8765
+163.28,165.04,SPEAKER_00,"Oh my goodness, it's weed.",0.0,ang,1.0
+165.04,169.12,SPEAKER_00,"I got an email this guy or put them on telegram, not going to do that.",0.0,neu,1.0
+169.12,170.68,SPEAKER_00,May I know your end level?,0.0,neu,1.0
+170.68,172.36,SPEAKER_00,I mean your English level.,0.0,neu,1.0
+172.36,173.36,SPEAKER_00,Fluent.,0.0,neu,1.0
+173.36,176.16,SPEAKER_00,I can write naughty minion fanfiction off the top of my dome.,0.0,neu,0.5748
+176.16,180.68,SPEAKER_00,The short minion enters the bedroom only wearing a thin set of underwear.,0.042,neu,1.0
+180.68,182.4,SPEAKER_00,The big minion lying in bed.,0.0,neu,1.0
+182.4,184.24,SPEAKER_00,The box of chocolates.,0.0,neu,1.0
+184.24,185.24,SPEAKER_00,Mouth.,0.0,hap,1.0
+185.24,186.24,SPEAKER_00,A gate.,0.0,hap,1.0
+186.24,187.24,SPEAKER_00,Gasp.,0.0,ang,0.9791
+187.24,188.24,SPEAKER_00,At the short minions.,0.0,neu,1.0
+188.24,189.24,SPEAKER_00,A tire.,0.0,ang,1.0
+189.24,190.84,SPEAKER_00,Is that good enough for you?,0.0,neu,0.997
+190.84,191.84,SPEAKER_00,Great.,0.0,hap,1.0
+192.24,195.44,SPEAKER_00,"Hmm, job description 1.PDF.",0.0,neu,1.0
+195.44,197.64,SPEAKER_00,This is the description of this position.,0.0,ang,1.0
+197.64,199.72,SPEAKER_00,"Oh, this guy knows how to rhyme too.",0.0,neu,1.0
+199.72,200.72,SPEAKER_00,That's good.,0.0,hap,1.0
+200.72,202.96,SPEAKER_00,JD Interview Partner.,0.0,ang,1.0
+202.96,204.72,SPEAKER_00,Unique job opportunity.,0.0,ang,1.0
+204.72,207.16,SPEAKER_00,Interview partner for a senior software engineer.,0.0,ang,1.0
+207.16,213.16,SPEAKER_00,"Basically, this guy is trying to use me as someone to go through job interviews.",0.0,neu,1.0
+213.16,216.04,SPEAKER_00,You'll receive all necessary information before each review.,0.0,ang,0.8693
+216.04,219.4,SPEAKER_00,"During the interview, I will guide you by typing responses in real time for you to",0.0,ang,1.0
+219.4,220.4,SPEAKER_00,read aloud.,0.0,hap,1.0
+220.8,222.48,SPEAKER_00,They're asking you an interview question.,0.0,neu,1.0
+222.48,224.4,SPEAKER_00,Has to type it out and then you respond.,0.0,ang,1.0
+224.4,227.0,SPEAKER_00,"So it's like, what is your name, my good sir?",0.0,neu,0.9991
+227.0,230.08,SPEAKER_00,What do I get for being this guy's puppet and getting him jobs?,0.0,ang,1.0
+230.08,234.6,SPEAKER_00,I will receive 30% of the salary after tax for each job secured.,0.0,ang,1.0
+234.6,239.48,SPEAKER_00,"So if the salary is $15,000 per month, I will receive $3,000 per month.",0.0,neu,0.7087
+239.48,244.24,SPEAKER_00,"If you help secure a second job, your earnings can increase to $63,000 per month.",0.0,ang,1.0
+244.24,248.84,SPEAKER_00,I don't know what the scam is other than like maybe some sort of employment fraud.,0.0,neu,0.9966
+248.84,250.96,SPEAKER_00,Do you have any experience in software developments?,0.0,neu,0.9998
+250.96,251.96,SPEAKER_00,Not at all.,0.0,neu,1.0
+251.96,255.04,SPEAKER_00,I can barely use my keyboard.,0.0,neu,1.0
+255.04,256.4,SPEAKER_00,"You know, things are getting desperate.",0.0,ang,1.0
+256.4,259.2,SPEAKER_00,"And at this point, I'm just looking for a job where I work for free.",0.0,neu,1.0
+259.2,263.32,SPEAKER_00,"And we have Howard here, who is definitely a real human being and not a bought account",0.0,ang,1.0
+263.32,269.56,SPEAKER_00,"on Discord with the username Howard, www.19932955.",0.0,hap,1.0
+269.56,270.56,SPEAKER_00,Hello everyone.,0.0,ang,0.9961
+270.56,274.72,SPEAKER_00,I have an idea that could help us secure more development projects across the US and Europe.,0.0,ang,1.0
+274.72,282.16,SPEAKER_00,The candidate would receive 20 to 30% of monthly income from the projects as compensation.,0.0,neu,0.9999
+282.16,284.08,SPEAKER_00,"Howard, I am interested in your job.",0.0,ang,1.0
+284.08,287.8,SPEAKER_00,After being a victim of a botched plastic surgery to make me look like my favorite kpop,0.0,ang,1.0
+287.8,290.72,SPEAKER_00,"idol, I need money to help fix my disassembled face.",0.0,ang,1.0
+290.72,293.56,SPEAKER_00,Please provide more details about the job and how to move forward.,0.0,ang,1.0
+293.56,294.56,SPEAKER_00,Howard style.,0.0,ang,0.9712
+294.56,296.44,SPEAKER_00,"Okay, let me explain about that.",0.0,neu,0.9853
+296.44,300.84,SPEAKER_00,"I am a software developer from Italy and I'm going to get US jobs, but I'm not a US citizen",0.0,ang,1.0
+300.84,302.32,SPEAKER_00,and native English speaker.,0.0,ang,1.0
+302.32,304.48,SPEAKER_00,So I am looking for a person to collaborate with me.,0.0,neu,1.0
+304.48,310.96,SPEAKER_00,"I'm good at collaborating, specifically when it comes to more than casual business relationships.",0.0,neu,1.0
+310.96,311.96,SPEAKER_00,So can you do interviews?,0.0,neu,1.0
+311.96,314.32,SPEAKER_00,"Oh, these are the same scams.",0.0,hap,0.9999
+314.32,318.52,SPEAKER_00,So what is Howard and we trying to do here in terms of making me do job interviews?,0.0,neu,1.0
+318.52,321.0,SPEAKER_00,"Well, this is another type of scam that I was trying to look for.",0.0,ang,1.0
+321.0,322.84,SPEAKER_00,Now it's not much of a scam.,0.0,ang,1.0
+322.84,326.24,SPEAKER_00,"It's a weird type of fraud that happens in the industry, but the thing that we were just",0.0,ang,1.0
+326.24,330.48,SPEAKER_00,"asked to do goes by a variety of names, the bait and switch interview, proxy interviewing,",0.0,ang,1.0
+330.48,332.92,SPEAKER_00,"the fake candidate scam, job interview fraud.",0.0,ang,0.9997
+332.92,336.76,SPEAKER_00,"The way that it works is that someone, a job candidate, will hire another person, you",0.0,ang,1.0
+336.76,340.72,SPEAKER_00,"know, a charismatic fellow like me who can write minion fanfiction.",0.0,hap,1.0
+340.72,344.64,SPEAKER_00,"And my job is to pretend to be the person, sit through the job interviews and land them",0.0,ang,1.0
+344.64,345.64,SPEAKER_00,the position.,0.0,ang,0.9867
+345.64,349.08,SPEAKER_00,I want to point out that this stuff generally is dangerous for the industry because in the,0.0,ang,1.0
+349.08,353.0,SPEAKER_00,"business insider article, they talked about how a hospital team was in a rush to fill",0.0,ang,1.0
+353.0,357.2,SPEAKER_00,the job position because it turns out the last person that they hired to land the job,0.0,ang,1.0
+357.2,358.2,SPEAKER_00,was a fraud.,0.0,neu,0.9998
+358.2,362.6,SPEAKER_00,"He was a proxy interviewer who actually got hired, but when he got to his job on the",0.0,ang,1.0
+362.6,366.48,SPEAKER_00,"first day, he started having trouble with basic technical issues.",0.0,ang,1.0
+366.48,370.2,SPEAKER_00,"And what ended up happening is that for some very basic maintenance, it caused an hour",0.0,ang,1.0
+370.2,375.8,SPEAKER_00,long connectivity outage for every medical device and computer on an entire floor of a,0.0,ang,1.0
+375.8,381.08,SPEAKER_00,"hospital, which left doctors unable to remotely monitor patients' vital signs.",0.0,ang,1.0
+381.08,384.68,SPEAKER_00,People could have died because this guy is a fucking idiot.,0.0,ang,1.0
+384.68,389.68,SPEAKER_00,"Now I don't want to give anyone any ideas here, but some random dude was offered $60",0.0,ang,1.0
+389.68,392.36,SPEAKER_00,an hour to sit on three to five job interviews.,0.0,ang,0.5275
+392.36,396.32,SPEAKER_00,"However, I don't want to give you any ideas because sometimes these scammers will just straight",0.0,neu,0.9898
+396.32,400.52,SPEAKER_00,"up ask you, can you show me your ID card, which you should never do, but some people will",0.0,ang,1.0
+400.52,402.2,SPEAKER_00,do that and congratulations.,0.0,ang,0.7805
+402.2,404.76,SPEAKER_00,You are now a victim of identity fraud.,0.0,neu,0.7576
+404.76,405.76,SPEAKER_00,Fun.,0.0,neu,1.0
+405.76,408.8,SPEAKER_00,"And as I continue to read people's opinions on the matter, I came across this comment that",0.0,ang,0.9999
+408.8,414.24,SPEAKER_00,"said, my Cisco was warned that FinTech companies are being targeted by North Korea and China",0.0,ang,1.0
+414.24,417.76,SPEAKER_00,with the desire to gain access to financial infrastructure.,0.0,ang,1.0
+417.76,421.12,SPEAKER_00,"At the time I was researching this, I completely brushed this off.",0.0,ang,1.0
+421.12,422.12,SPEAKER_00,It's discord.,0.0,ang,1.0
+422.12,423.62,SPEAKER_00,It's a fucking chat platform.,0.0,ang,0.6532
+423.62,428.56,SPEAKER_00,North Korea is not going to be using it to try and spy on American companies and espionage,0.0,ang,1.0
+428.56,429.56,SPEAKER_00,and all that crap.,0.0,neu,0.9649
+429.56,434.56,SPEAKER_00,That's at least what I thought until I started going deeper and deeper into things.,0.0,neu,1.0
+434.56,439.0,SPEAKER_00,Because things come to a head in terms of this North Korean conspiracy theory when we get,0.0,ang,1.0
+439.0,440.72,SPEAKER_00,to our next posting.,0.0,ang,1.0
+440.72,445.52,SPEAKER_00,"Miring Remote by Pro, who's online right now with the username Earn.Money.",0.0,neu,1.0
+445.52,450.28,SPEAKER_00,"Oh, I'm expanding my market to worldwide and looking for people to collaborate with me",0.0,hap,1.0
+450.28,452.24,SPEAKER_00,from all these locations.,0.0,neu,1.0
+452.24,455.56,SPEAKER_00,It's absolutely remote and flexible work with good compensation.,0.0,ang,0.8644
+455.56,457.36,SPEAKER_00,No skills and experience.,0.0,ang,0.9992
+457.36,458.64,SPEAKER_00,Perfect for me.,0.0,ang,0.9454
+458.64,459.64,SPEAKER_00,Must have a laptop.,0.0,ang,0.9918
+459.64,461.52,SPEAKER_00,Must be 20 to 35.,0.0,neu,0.9998
+461.52,464.44,SPEAKER_00,Send me a DM filling out this form for more detail.,0.0,ang,1.0
+464.44,468.28,SPEAKER_00,"Hello, I was recently injured in my workplace after falling off a ladder and landing on a",0.0,ang,0.9874
+468.28,469.96,SPEAKER_00,conical spike that entered me.,0.0,ang,1.0
+470.0,471.28,SPEAKER_00,I'm interested in your job.,0.0,neu,0.9992
+471.28,472.28,SPEAKER_00,My name is Brad.,0.0,neu,0.9957
+472.28,473.28,SPEAKER_00,I'm 29.,0.0,neu,1.0
+473.28,474.28,SPEAKER_00,I look like I'm 20.,0.0,ang,1.0
+474.28,475.28,SPEAKER_00,American.,0.0,neu,1.0
+475.28,479.28,SPEAKER_00,"My last job was an adult toy manufacturing assistant and I expect up to $100,000.",0.0,neu,0.9986
+479.28,481.44,SPEAKER_00,Are you available for a call with me?,0.0,ang,1.0
+481.44,485.08,SPEAKER_00,"And after edging this dude for 20 minutes saying that I'm joining, I decide to actually",0.0,ang,1.0
+485.08,488.24,SPEAKER_00,join the Google meets call where I act like a dumb American.,0.0,ang,0.9965
+488.24,489.24,SPEAKER_00,Hello.,0.19,hap,1.0
+489.24,490.24,SPEAKER_01,Yeah.,0.4,hap,1.0
+490.24,491.24,SPEAKER_01,Hello.,0.43,neu,1.0
+491.24,492.24,SPEAKER_01,Hello.,0.89,neu,1.0
+492.24,493.24,SPEAKER_01,Hello.,0.35,neu,1.0
+493.24,494.24,SPEAKER_00,Hello.,0.0,neu,1.0
+494.24,495.24,SPEAKER_01,Can you hear me?,0.46,neu,1.0
+495.24,496.24,SPEAKER_01,Hello.,0.0,neu,0.9999
+496.24,497.24,SPEAKER_01,"Yeah, I can hear you.",0.0,hap,0.965
+497.24,498.24,SPEAKER_01,Thank you for joining.,0.0,neu,1.0
+498.24,502.32,SPEAKER_01,"Yes, I will explain about my plan.",0.0,hap,0.9721
+502.32,509.44,SPEAKER_01,So I may software engineer and I'm currently visiting Japan.,0.0,neu,1.0
+509.44,516.88,SPEAKER_01,You know that the average salary in America is much higher than other countries.,0.0,neu,0.9991
+516.88,524.68,SPEAKER_01,"So as a developer, it is two times much, much more than in Japan.",0.031,neu,1.0
+524.68,525.68,SPEAKER_01,Two times what?,1.0,neu,1.0
+525.68,526.68,SPEAKER_01,Sorry.,0.07,ang,1.0
+526.68,528.2,SPEAKER_01,Two times higher than Japan.,0.145,hap,1.0
+528.2,530.2,SPEAKER_00,"That's just higher times two, right?",0.165,neu,1.0
+530.2,531.2,SPEAKER_01,"Yeah, that's right.",0.2,neu,1.0
+531.2,532.2,SPEAKER_01,Okay.,0.21,hap,1.0
+532.2,541.84,SPEAKER_01,"What you have to do is just create some accounts, social accounts for me and I will update their",0.0,neu,1.0
+541.84,544.28,SPEAKER_01,profile as a software developer.,0.0,neu,0.9994
+544.28,547.04,SPEAKER_01,Do you use LinkedIn?,0.123,neu,1.0
+547.04,548.04,SPEAKER_00,No.,0.0,neu,1.0
+548.04,554.0,SPEAKER_01,"You don't need, you don't use and it means you don't need it.",0.04,ang,1.0
+554.0,556.16,SPEAKER_01,"Yeah, it's a waste of money.",0.0,neu,1.0
+556.16,557.16,SPEAKER_01,So.,0.52,hap,0.9971
+557.16,558.16,SPEAKER_01,Okay.,0.0,hap,1.0
+558.16,564.48,SPEAKER_00,I don't have a lot of money right now just because of the accident.,0.5,hap,0.9998
+564.48,565.48,SPEAKER_00,"You know, yeah.",0.0,hap,1.0
+565.48,566.48,SPEAKER_01,Yeah.,0.31,neu,1.0
+566.48,567.48,SPEAKER_00,But it's bad.,0.94,neu,1.0
+567.48,568.48,SPEAKER_00,Yeah.,1.0,hap,1.0
+568.48,569.48,SPEAKER_00,It's bad.,0.17,hap,0.8117
+569.48,572.6,SPEAKER_00,"Like the accident, I had to sell everything.",0.0,neu,1.0
+572.6,573.6,SPEAKER_00,It was bad.,0.0,ang,1.0
+573.6,575.32,SPEAKER_01,"Yeah, it was bad.",0.0,neu,1.0
+575.32,580.12,SPEAKER_00,"And like I got a pot in a wheelchair and I had to go through like, you know, physical",0.329,hap,1.0
+580.12,585.4,SPEAKER_00,therapy just so that my legs would work and it's crazy with the accident.,0.032,neu,1.0
+585.4,589.68,SPEAKER_00,"Like, you know, it's not just my legs that didn't work, you know, like it was everything.",0.0,neu,1.0
+589.68,594.56,SPEAKER_00,"It was everything below the waist, you know, like my most important thing wasn't working,",0.061,neu,1.0
+594.56,595.56,SPEAKER_01,you know?,0.37,neu,0.9964
+595.56,596.56,SPEAKER_01,I'll go to it.,0.0,neu,1.0
+596.56,597.96,SPEAKER_01,"Yeah, I didn't know.",0.0,neu,1.0
+597.96,599.64,SPEAKER_01,I'm sorry to hear that.,0.0,neu,1.0
+599.64,601.16,SPEAKER_00,"Oh, it's all good.",0.046,hap,1.0
+601.16,602.16,SPEAKER_00,That's what the jobs for though.,0.0,neu,1.0
+602.16,606.36,SPEAKER_00,"I'm trying to pay to get my, my, my, my legs and my weener working.",0.0,neu,1.0
+606.36,610.12,SPEAKER_00,"Now, I'm going to be honest with you for a second, but during the time I was going through",0.0,ang,1.0
+610.12,614.08,SPEAKER_00,"this call, I was actually really concerned that I was just talking to some nice guy",0.0,neu,1.0
+614.08,617.84,SPEAKER_00,in a foreign country that was just trying to make more money by working in the US.,0.0,neu,0.9998
+617.84,622.2,SPEAKER_00,"So I started to kind of feel bad if I'm going to be honest, but I stuck with it and I'm",0.0,neu,1.0
+622.2,623.52,SPEAKER_00,sure glad I did.,0.121,neu,1.0
+623.52,625.72,SPEAKER_01,So are you single?,0.0,neu,1.0
+625.72,628.56,SPEAKER_01,If I ask about your job.,0.0,neu,1.0
+628.56,629.56,SPEAKER_00,"Yeah, yeah.",0.69,hap,1.0
+629.56,630.56,SPEAKER_00,"Yeah, yeah.",0.0,neu,1.0
+630.56,633.96,SPEAKER_00,"Now, yeah, my wife left me because of the accident, but now I have all the time in the world",0.1,neu,1.0
+633.96,638.8,SPEAKER_00,"to try and get myself, you know, metaphorically and realistically back on my feet.",0.017,neu,1.0
+638.8,641.0,SPEAKER_01,"Oh, it's really bad.",0.0,hap,1.0
+641.0,647.52,SPEAKER_01,"I didn't know that I'm very sorry, very sorry to hear that.",0.035,neu,1.0
+647.52,648.52,SPEAKER_00,It's all good.,0.36,hap,1.0
+648.52,650.0,SPEAKER_00,They gave me an electric wheelchair.,0.0,neu,1.0
+650.0,651.92,SPEAKER_00,So at least I have that going for me.,0.047,neu,1.0
+651.92,655.2,SPEAKER_00,"You know, if it was man, if it was manual, that'd be a lot harder.",0.25,hap,1.0
+655.2,658.6,SPEAKER_00,"But since this one is electric, you know, I can at least look cool on it.",0.0,neu,1.0
+658.6,660.32,SPEAKER_01,"Anyways, what are you saying about LinkedIn again?",0.378,neu,0.9988
+660.32,663.36,SPEAKER_01,"Okay, let's dive into our topic.",0.0,neu,1.0
+663.36,664.88,SPEAKER_01,So we are talking more LinkedIn.,0.0,neu,1.0
+664.88,672.0,SPEAKER_01,"So what you have to do is to support me with your accounts are not only LinkedIn, but",0.0,neu,1.0
+672.0,678.0,SPEAKER_01,there can be several several platforms like our account.,0.0,neu,1.0
+678.0,682.68,SPEAKER_01,And then you need to modify your identity on those platforms.,0.036,neu,1.0
+682.68,686.28,SPEAKER_00,"So at this point during the call, I'm trying to realize what scam is going on.",0.0,neu,0.986
+686.28,690.0,SPEAKER_00,"And at this point, I thought he was just going to do a typical identity fraud scam where",0.0,ang,0.9991
+690.0,694.76,SPEAKER_00,"he's like, Hey, send me your ID so we can verify you on LinkedIn and air quotes.",0.0,ang,1.0
+694.76,698.92,SPEAKER_00,And then he just uses my ID to take out loans and then my credit score goes down.,0.0,ang,0.6936
+698.92,703.12,SPEAKER_00,"Don't worry, it's already at zero anyways, but turns out that's not the case.",0.174,neu,0.7286
+703.12,711.6,SPEAKER_01,"And one more thing is that in case I'm using your accounts, I need to work on your computer.",0.0,neu,1.0
+711.6,714.2,SPEAKER_01,It's due to policies of platforms.,0.0,neu,1.0
+714.2,719.08,SPEAKER_01,So the policy of these platforms are very straight.,0.0,neu,1.0
+719.08,724.44,SPEAKER_01,"For example, on LinkedIn, they detect the IPs of the machines.",0.0,neu,1.0
+724.44,732.68,SPEAKER_01,"So if I am using your account on my computer, they detect that I logged in your account in",0.0,ang,0.9925
+732.68,735.64,SPEAKER_01,Japan and blocked your account.,0.0,ang,1.0
+735.64,738.28,SPEAKER_01,So that's why I should work on your computer.,0.0,neu,1.0
+738.28,739.28,SPEAKER_00,"Oh, okay.",0.74,neu,1.0
+739.28,740.28,SPEAKER_01,Does it make sense?,0.43,neu,1.0
+740.28,741.8,SPEAKER_00,Do I need to send you my computer?,0.507,ang,1.0
+741.8,744.2,SPEAKER_01,"No, no, no, no, not sent.",0.0,neu,0.9122
+744.2,747.96,SPEAKER_01,There are remote softwares like any of this.,0.0,neu,1.0
+747.96,751.04,SPEAKER_01,"I, I will send you the link.",0.036,ang,1.0
+751.04,755.2,SPEAKER_00,Now I assumed the second he sent me this link that he's going to try and do one of those,0.0,ang,1.0
+755.2,758.64,SPEAKER_00,normal tech support scams you see from like Kit Vogue on YouTube.,0.0,neu,0.5597
+758.64,762.32,SPEAKER_00,I thought he was going to log into my bank account and try to steal my money or log into,0.0,ang,1.0
+762.32,766.16,SPEAKER_00,my account and steal my passwords or maybe just download malware on my computer.,0.0,ang,1.0
+766.16,770.36,SPEAKER_00,"I thought this was the end of the scam and thankfully I was on a virtual machine, but",0.0,neu,1.0
+770.36,771.88,SPEAKER_00,it wasn't the end of the scam.,0.0,ang,1.0
+771.88,772.88,SPEAKER_00,It just gets deeper.,0.0,ang,1.0
+772.88,773.88,SPEAKER_00,"Oh, I got a new number.",0.39,neu,1.0
+773.88,774.88,SPEAKER_00,Do you want me to read the number?,0.0,neu,1.0
+774.88,775.88,SPEAKER_00,"No, no, no, no.",0.37,hap,1.0
+775.88,787.2,SPEAKER_00,"This is my three, eight, nine, five, zero, six, one, zero.",0.246,neu,1.0
+787.2,791.8,SPEAKER_01,"Okay, please accept, accept that it's me.",0.0,neu,1.0
+791.8,793.4,SPEAKER_01,It's me who's access.,0.544,neu,1.0
+793.4,795.88,SPEAKER_00,It says administrator.,0.25,neu,1.0
+795.88,796.88,SPEAKER_00,Is that you?,0.18,neu,1.0
+796.88,798.2,SPEAKER_01,"Yeah, that's me.",0.0,neu,1.0
+798.2,799.2,SPEAKER_01,Yeah.,0.0,neu,1.0
+799.2,801.0,SPEAKER_01,"Okay, I can access to your computer.",0.0,neu,0.9999
+801.0,803.56,SPEAKER_01,Do you agree to work with me?,0.0,neu,1.0
+803.56,804.56,SPEAKER_00,So.,0.31,neu,1.0
+804.56,805.84,SPEAKER_00,I don't have any problems.,0.0,neu,1.0
+805.84,808.16,SPEAKER_00,We've been we've been chit chat and for a while.,0.0,neu,1.0
+808.16,809.84,SPEAKER_00,I think this is quite interesting.,0.065,neu,1.0
+809.84,810.84,SPEAKER_01,"Okay, okay.",0.0,hap,1.0
+810.84,811.84,SPEAKER_01,That's cool.,0.0,neu,0.9972
+811.84,820.08,SPEAKER_01,"If I sit the password here on any disk, I can access to a computer when I need to.",0.016,neu,1.0
+820.08,823.76,SPEAKER_00,"So if you're not sure what's going on, what he's doing here is he's setting a password",0.0,ang,1.0
+823.76,827.28,SPEAKER_00,on any desk so that he can access my laptop at any time.,0.0,ang,1.0
+827.28,829.88,SPEAKER_00,"So if I'm away from my laptop, I don't need to click on accept.",0.0,ang,1.0
+829.88,833.88,SPEAKER_00,He can just log in with his password and access my computer whenever he wants to.,0.0,ang,1.0
+833.88,835.32,SPEAKER_00,Do you want me to close my eyes?,0.021,neu,1.0
+835.32,839.48,SPEAKER_01,"No, no, no, no, I can't feel it.",0.0,neu,1.0
+839.48,846.84,SPEAKER_01,"I said, I said the password is a red code scare with your name and with my name.",0.016,neu,1.0
+846.84,851.04,SPEAKER_00,"If this was an actual tech support scam, he wouldn't tell me the password, but he shares",0.0,neu,0.9998
+851.04,852.96,SPEAKER_00,the password with me.,0.0,ang,1.0
+852.96,854.56,SPEAKER_00,It's not one of those scams.,0.137,ang,1.0
+854.56,856.56,SPEAKER_01,You and I work together.,0.0,neu,1.0
+856.56,862.04,SPEAKER_01,So you provide me that accounts and I work on that doesn't make sense.,0.0,neu,0.9936
+862.04,866.6,SPEAKER_01,So I act like I'm you.,0.0,neu,1.0
+866.6,871.4,SPEAKER_00,"So if you are you going to also have to have your legs not work, you're going to have to",0.408,neu,1.0
+871.4,875.48,SPEAKER_00,"go through the accident to be me because you know what they say, right?",0.0,neu,1.0
+875.48,880.08,SPEAKER_00,"Like you don't really know a person unless you've, you know, rolled a mile in their wheelchair.",0.02,neu,1.0
+880.08,885.56,SPEAKER_01,"Yeah, I know that I understand you.",0.018,neu,1.0
+885.56,887.72,SPEAKER_00,Is that you and your profile picture?,0.005,neu,1.0
+887.72,891.28,SPEAKER_01,"No, this is just a model.",0.0,neu,1.0
+891.28,895.0,SPEAKER_01,So I thought it was you.,0.306,hap,1.0
+895.0,898.4,SPEAKER_00,I said you would look pretty cute in that dress.,0.3,hap,1.0
+898.4,904.12,SPEAKER_01,"I have a male, but this is even if you're a male or a female.",0.528,neu,1.0
+904.12,908.88,SPEAKER_01,"I got it, but I don't, I don't wear a dress.",0.076,neu,1.0
+908.88,910.92,SPEAKER_01,I usually wear.,0.397,neu,1.0
+910.92,911.92,SPEAKER_01,Yeah.,0.21,hap,1.0
+911.92,912.92,SPEAKER_01,"Okay, got it.",0.0,neu,1.0
+912.92,915.08,SPEAKER_00,"Okay, so I got to make a LinkedIn account, right?",0.347,neu,1.0
+915.08,920.76,SPEAKER_00,"Yeah, you used the LinkedIn account to find jobs.",0.403,hap,0.6524
+920.76,924.92,SPEAKER_01,And you connect the payment to your account.,0.0,neu,0.9999
+924.92,931.92,SPEAKER_01,"And if I get a job and get paid from the companies, I will try to get our remote jobs.",0.029,neu,1.0
+931.92,937.92,SPEAKER_00,"He's going to connect the payment to my actual bank account, which doesn't make sense at all",0.0,ang,1.0
+937.92,939.28,SPEAKER_00,to me in any way.,0.0,ang,1.0
+939.28,940.28,SPEAKER_00,What's the whatever?,0.0,ang,1.0
+940.28,942.88,SPEAKER_00,Everything that he's doing here is so obscure.,0.0,ang,1.0
+942.88,946.48,SPEAKER_00,"When you're trying to scam someone, you usually lie to the person you're scamming, but",0.0,ang,1.0
+946.48,948.92,SPEAKER_00,this guy is pretty upfront with most things.,0.053,ang,1.0
+948.92,954.96,SPEAKER_01,"The developer salary in the United States is about $2,000 a month.",0.0,neu,1.0
+954.96,956.96,SPEAKER_01,Is that right?,0.0,neu,1.0
+956.96,957.96,SPEAKER_01,Yeah.,0.0,neu,0.9799
+957.96,958.96,SPEAKER_01,Wow.,0.38,hap,1.0
+958.96,959.96,SPEAKER_01,Wow.,0.0,hap,1.0
+959.96,960.96,SPEAKER_01,You know that.,0.02,neu,1.0
+960.96,961.96,SPEAKER_01,Wow.,0.41,neu,1.0
+961.96,968.32,SPEAKER_01,And then you might pay for tax and do I have to pay my taxes?,0.25,neu,1.0
+968.32,974.0,SPEAKER_01,"If you get the job, actually, I will get the job and due to the law, you should follow",0.0,neu,1.0
+974.0,975.0,SPEAKER_01,the law.,0.0,neu,1.0
+975.0,978.88,SPEAKER_00,"If you have any work on the law, what we doing is that is that you're going to have",0.495,neu,1.0
+978.88,980.88,SPEAKER_00,"this level, a legal?",0.0,neu,1.0
+980.88,982.88,SPEAKER_00,Like is this loud?,0.0,hap,1.0
+982.88,983.88,UNKNOWN,Yeah.,0.0,hap,1.0
+983.88,987.2,SPEAKER_01,We can solve that problem as well.,0.0,neu,1.0
+987.2,989.4,SPEAKER_00,"No, that's just a yes or no question.",0.536,neu,1.0
+989.4,995.36,SPEAKER_00,Is what we doing and doing is all this work and thing and sign it up for LinkedIn?,0.0,neu,1.0
+995.36,997.36,SPEAKER_01,Is this illegal?,0.365,neu,0.9955
+997.36,999.12,SPEAKER_01,I imagine this.,0.119,neu,1.0
+999.12,1000.6,SPEAKER_00,It's just a yes or no question.,0.0,neu,1.0
+1000.6,1001.6,SPEAKER_00,That's what I'm asking.,0.0,neu,1.0
+1001.6,1003.8,SPEAKER_00,I'm not asking for some big roundabout story.,0.0,neu,1.0
+1003.8,1004.8,SPEAKER_00,Is this illegal?,0.0,neu,1.0
+1004.8,1008.8,SPEAKER_01,What we're doing?,0.103,neu,1.0
+1008.8,1013.0,SPEAKER_01,"I'm trying to find it, but okay, that's not with me.",0.412,neu,1.0
+1013.0,1014.0,SPEAKER_00,It's okay.,0.0,neu,1.0
+1014.0,1018.76,SPEAKER_01,"I just wanted to know if you are trying on freelancing platforms, there is nothing",0.063,neu,1.0
+1018.76,1021.08,SPEAKER_01,or nothing to worry about.,0.047,neu,1.0
+1021.08,1026.56,SPEAKER_01,"And if you are trying for jobs, it's kind of illegal.",0.109,neu,1.0
+1026.56,1032.4,SPEAKER_00,"But if his point is to just get a job, everything that he's doing is so convoluted and just",0.0,ang,1.0
+1032.4,1038.24,SPEAKER_00,"trying to hide from someone else, which is starting to make me think, is this person",0.0,ang,0.7751
+1038.24,1041.36,SPEAKER_00,trying to hide from the government somehow?,0.0,neu,1.0
+1041.36,1043.4,SPEAKER_00,But I don't want to just go conspiracy theorists.,0.0,neu,0.8865
+1043.4,1044.4,SPEAKER_00,I need to learn more.,0.0,neu,1.0
+1044.4,1048.32,SPEAKER_00,So I continue playing along with the scam and just talk to my good old dear friend that,0.0,ang,1.0
+1048.32,1050.32,SPEAKER_00,has heard almost everything from me.,0.045,neu,0.9988
+1050.32,1052.08,SPEAKER_01,Can you create a Gmail now?,0.057,neu,1.0
+1052.08,1053.08,SPEAKER_01,Can I touch my computer?,1.0,neu,1.0
+1053.08,1054.84,SPEAKER_01,"Okay, just a second.",0.04,neu,1.0
+1054.84,1057.12,SPEAKER_01,I will open Chrome.,0.0,neu,1.0
+1057.12,1063.36,SPEAKER_01,"You can create a Gmail now for LinkedIn account, personal news.",0.09,neu,1.0
+1063.36,1065.36,SPEAKER_01,Personal news.,0.0,neu,1.0
+1065.36,1066.36,SPEAKER_01,Personal news.,0.39,neu,1.0
+1067.36,1071.96,SPEAKER_00,"All right, September 11, 2001.",0.0,neu,1.0
+1071.96,1072.96,SPEAKER_01,I like it.,0.24,hap,1.0
+1072.96,1073.96,SPEAKER_01,I like it.,0.38,neu,1.0
+1073.96,1074.96,SPEAKER_01,"No, no, no, no.",0.03,hap,0.9998
+1074.96,1078.44,SPEAKER_01,"No, I think we need owner Brad 631.",0.667,hap,1.0
+1078.44,1080.2,SPEAKER_00,That one's pretty good.,0.0,neu,1.0
+1080.2,1081.68,SPEAKER_00,"All right, password.",0.0,neu,1.0
+1081.68,1083.68,SPEAKER_00,Boner Brad 631.,0.0,neu,1.0
+1083.68,1084.68,SPEAKER_00,You should add a one.,0.31,neu,1.0
+1084.68,1085.68,SPEAKER_01,I don't want to.,0.28,neu,1.0
+1085.68,1086.68,SPEAKER_01,There we go.,1.0,hap,1.0
+1086.68,1090.68,SPEAKER_00,"No, we don't need to save it.",0.4,neu,1.0
+1090.68,1091.68,SPEAKER_01,I memorized it.,0.44,neu,1.0
+1091.68,1100.0,SPEAKER_01,"If it just input your phone number, I need to pick the right country.",0.248,hap,0.8578
+1100.0,1103.48,SPEAKER_00,They don't got Japan on here for you to put your number in.,0.04,neu,1.0
+1103.48,1106.4,SPEAKER_01,"No, no, no, no, your country.",0.0,neu,1.0
+1106.4,1112.12,SPEAKER_01,You will create it with your phone number and then you need to choose your country.,0.045,neu,1.0
+1112.12,1118.2,SPEAKER_01,"If you input your phone number, it automatically says the country.",0.025,ang,0.676
+1118.2,1119.2,SPEAKER_00,Does it?,0.09,neu,1.0
+1119.2,1120.2,SPEAKER_00,Okay.,0.0,hap,1.0
+1120.2,1121.2,SPEAKER_00,And then what?,0.0,neu,1.0
+1121.2,1123.72,SPEAKER_01,"No, no, your phone number.",0.123,neu,0.9665
+1123.72,1126.12,SPEAKER_01,Please input your phone number.,0.017,hap,0.7915
+1126.12,1128.12,SPEAKER_00,Japan phone number.,0.185,neu,1.0
+1128.12,1130.92,SPEAKER_01,"I know, no, no, your phone number.",0.175,hap,1.0
+1130.92,1132.28,SPEAKER_00,"Oh, okay, I got you.",0.0,hap,1.0
+1132.28,1133.28,SPEAKER_00,I got you.,0.26,neu,1.0
+1133.28,1134.28,SPEAKER_01,"Yeah, your phone number.",0.0,neu,1.0
+1134.28,1135.28,SPEAKER_01,Your phone number.,0.47,hap,0.9211
+1135.28,1136.28,SPEAKER_00,I know.,0.0,hap,1.0
+1136.28,1137.28,SPEAKER_00,Number.,0.0,neu,1.0
+1137.28,1138.28,SPEAKER_00,I spelled it wrong.,0.0,hap,1.0
+1138.28,1139.28,SPEAKER_01,That's why.,0.34,neu,1.0
+1139.28,1141.28,SPEAKER_01,"Hi, hello, Brad.",0.0,ang,1.0
+1141.28,1142.28,SPEAKER_01,Brad.,0.0,neu,0.9995
+1142.28,1148.76,SPEAKER_01,I'm not telling you to input your phone number.,0.0,neu,1.0
+1148.76,1151.96,SPEAKER_01,Just your real phone number.,0.0,neu,1.0
+1151.96,1152.96,SPEAKER_01,Real phone number.,0.11,neu,1.0
+1152.96,1155.36,SPEAKER_00,"Okay, I'm going to be honest at this point, I completely fucked up.",0.0,ang,1.0
+1155.36,1157.92,SPEAKER_00,I do not have a phone number to make any account.,0.0,ang,1.0
+1157.92,1159.52,SPEAKER_00,So you want me to put in the phone number?,0.081,neu,1.0
+1159.52,1161.68,SPEAKER_01,"Yeah, your real phone number.",0.042,hap,1.0
+1161.68,1165.6,SPEAKER_00,"Oh, that's why it wasn't working because I was putting it.",0.0,hap,1.0
+1165.6,1167.32,SPEAKER_00,I was just putting in random numbers.,0.25,neu,1.0
+1167.32,1170.72,SPEAKER_00,"I was just going like this, you know, and then pressing enter.",0.468,neu,0.9998
+1170.72,1171.72,SPEAKER_00,There we go.,0.67,neu,1.0
+1171.72,1172.72,SPEAKER_00,What the?,0.06,neu,1.0
+1172.72,1175.36,SPEAKER_00,What in the error code seven is this going on?,0.0,neu,1.0
+1175.36,1178.04,SPEAKER_00,"Oh, mother, making me do the whole thing again.",0.0,neu,1.0
+1178.04,1179.04,SPEAKER_00,You know what?,0.0,ang,1.0
+1179.04,1180.2,SPEAKER_00,It's getting late at six o'clock.,0.0,neu,1.0
+1180.2,1181.68,SPEAKER_00,I got to go make dinner soon.,0.0,neu,1.0
+1181.68,1183.28,SPEAKER_00,Do you want me to invite you over after?,0.0,neu,1.0
+1183.28,1192.6,SPEAKER_01,"Uh, okay, but I should know your name, your flame and birthday to create those accounts.",0.032,neu,1.0
+1192.6,1196.28,SPEAKER_00,"Anyway, you can just put, you can just put in random numbers.",0.451,neu,1.0
+1196.28,1199.52,SPEAKER_00,"I mean, we're just on our first call, you know, our first date.",0.031,neu,1.0
+1199.52,1200.72,SPEAKER_01,"Uh, okay, okay, okay.",0.108,neu,1.0
+1200.72,1204.64,SPEAKER_00,"You know, like I think, I think we get to know each other a little bit more before,",0.074,neu,1.0
+1204.64,1208.68,SPEAKER_00,"you know, like I, you know, when you go on a date with someone, you don't give them the",0.0,neu,1.0
+1208.68,1213.56,SPEAKER_00,"keys to your house the first time and you and I, we got to spend some time together,",0.193,neu,1.0
+1213.56,1217.96,SPEAKER_01,"getting closer, understandable.",0.618,neu,1.0
+1217.96,1218.96,SPEAKER_01,Yeah.,0.0,neu,1.0
+1218.96,1219.96,SPEAKER_00,"You know, okay.",0.32,hap,1.0
+1219.96,1224.16,SPEAKER_00,Do you admire a guy whose legs and weener doesn't work?,0.205,neu,1.0
+1224.16,1225.16,SPEAKER_01,"Uh, sorry.",0.0,neu,1.0
+1225.16,1228.2,SPEAKER_01,I think I didn't understand you.,0.0,neu,1.0
+1228.2,1234.56,SPEAKER_00,"I said, do you admire a guy who six foot five stature in a wheelchair, weener non-functional?",0.016,neu,1.0
+1234.56,1235.56,SPEAKER_00,Is that something you look for?,0.67,neu,1.0
+1235.56,1238.48,SPEAKER_01,"Uh, yes, I'm, yes, I've got a desire to admire.",0.092,neu,1.0
+1238.48,1239.48,SPEAKER_00,Wonderful.,0.4,neu,0.9999
+1239.48,1240.48,SPEAKER_00,"Well, okay.",0.24,neu,1.0
+1240.48,1241.48,SPEAKER_00,It's been an honor.,0.51,hap,1.0
+1241.48,1242.48,SPEAKER_00,"Thank you, my new business partner.",0.07,neu,1.0
+1242.48,1243.48,SPEAKER_01,"Uh, yeah.",0.0,hap,1.0
+1243.48,1245.36,SPEAKER_01,Thank you as well.,0.0,hap,1.0
+1245.36,1247.48,SPEAKER_01,"Uh, I really appreciate your help.",0.014,neu,1.0
+1247.48,1248.48,SPEAKER_00,"Oh, not a problem.",0.0,neu,1.0
+1248.48,1249.48,SPEAKER_00,I love you.,0.0,neu,1.0
+1249.48,1251.48,SPEAKER_00,"Uh, I'm your chair.",0.0,hap,1.0
+1251.48,1253.32,SPEAKER_00,"Oh, no, you hang out first.",0.0,neu,0.9748
+1253.32,1254.32,SPEAKER_00,Okay.,0.09,hap,1.0
+1254.32,1255.32,SPEAKER_00,Okay.,0.27,neu,0.9999
+1255.32,1256.32,SPEAKER_00,Yeah.,0.07,neu,0.9549
+1256.32,1257.32,SPEAKER_00,Bye-bye.,0.0,hap,1.0
+1257.32,1258.32,SPEAKER_00,Holy f***.,0.0,ang,1.0
+1258.32,1261.04,SPEAKER_00,"Now, since I didn't know what was going on, I really needed to take a step back.",0.0,ang,1.0
+1261.04,1264.44,SPEAKER_00,I've never heard of someone trying to get a job under your name.,0.0,ang,1.0
+1264.44,1266.48,SPEAKER_00,I've heard of something that's kind of the other way around.,0.0,ang,1.0
+1266.48,1270.56,SPEAKER_00,"But what outsourcing is, is instead of doing your job, instead, you just hire someone",0.0,ang,1.0
+1270.56,1274.24,SPEAKER_00,in a different country where their labor is cheaper and you get them to do your job,0.0,ang,1.0
+1274.24,1275.24,SPEAKER_00,for you.,0.0,ang,1.0
+1275.24,1278.96,SPEAKER_00,"So anyways, let's pretend we're all a corporation bootlicker and we love big corporate.",0.0,ang,1.0
+1278.96,1282.76,SPEAKER_00,"Well, there's this business insider article talking about scamming the boss.",0.0,ang,1.0
+1282.76,1286.2,SPEAKER_00,Some employees are outsourcing their jobs to other people.,0.0,ang,1.0
+1286.2,1289.72,SPEAKER_00,"That's just called being a manager, but it's still scamming, apparently.",0.0,neu,0.9451
+1289.72,1291.96,SPEAKER_00,But here's how the companies are spotting the fraudsters.,0.0,ang,1.0
+1291.96,1293.96,SPEAKER_00,"Now, I don't really give a crap about any of that.",0.0,neu,1.0
+1293.96,1297.6,SPEAKER_00,"The main thing I want to point out with outsourcing, which will help me explain what's going on",0.0,ang,0.9998
+1297.6,1302.4,SPEAKER_00,"with Kassuke here, is that there are security risks when it comes to outsourcing your job.",0.0,ang,0.996
+1302.4,1306.88,SPEAKER_00,Because the practice of outsourcing creates more opportunities for any bad actors to infiltrate,0.0,ang,1.0
+1306.88,1308.92,SPEAKER_00,a company's proprietary systems.,0.0,ang,1.0
+1308.92,1312.64,SPEAKER_00,"If you're making the code for a website, you can intentionally put in a back door so you",0.0,ang,1.0
+1312.64,1315.76,SPEAKER_00,can attack the website or steal their company data.,0.0,ang,1.0
+1315.76,1321.96,SPEAKER_00,"And since outsourcing has these sort of issues, there are cases where foreign entities,",0.0,neu,1.0
+1321.96,1326.8,SPEAKER_00,"specifically North Korea, will have fake IT workers that try to infiltrate companies.",0.0,ang,1.0
+1326.8,1330.6,SPEAKER_00,But no before needed a software engineer in our eternal ITAIT.,0.0,ang,1.0
+1330.6,1334.44,SPEAKER_00,"We posted the job, received resumes, conducted interviews, performed background checks, verified",0.0,ang,1.0
+1334.44,1336.24,SPEAKER_00,"references, and hired the person.",0.0,ang,1.0
+1336.24,1337.52,SPEAKER_00,They did everything normal.,0.0,ang,1.0
+1337.52,1341.6,SPEAKER_00,"They sent in their Mac workstation and the moment it was received, it immediately started",0.0,ang,1.0
+1341.6,1342.76,SPEAKER_00,to load malware.,0.0,neu,0.891
+1342.76,1346.4,SPEAKER_00,"But instead of hearing what some random company know before is talking about, why don't we",0.0,ang,1.0
+1346.4,1351.96,SPEAKER_00,"just hear it directly from the F.K.N.F.B.I. themselves and in unclassified documents, talking",0.0,ang,1.0
+1351.96,1356.16,SPEAKER_00,about the guidance on the Democratic People's Republic of Korea Information Technology,0.0,ang,1.0
+1356.16,1359.08,SPEAKER_00,"Workers, aka North Korean IT Workers.",0.0,neu,1.0
+1359.08,1362.76,SPEAKER_00,"The US Department of State, the US Department of the Treasury, and the Federal Bureau of",0.0,ang,1.0
+1362.76,1367.24,SPEAKER_00,"Investigation, FBI, are issuing this advisory for the international community, the private",0.0,ang,1.0
+1367.24,1371.8,SPEAKER_00,"sector, and the public to warn of attempts by Democratic People's Republic of Korea,",0.0,ang,1.0
+1371.8,1376.92,SPEAKER_00,"DPRK aka North Korea, information technology, IT, the acronyms are up the f**king wazoo.",0.0,ang,1.0
+1376.92,1381.96,SPEAKER_00,But North Korean IT workers to obtain employment while posing as non-North Korean nationals.,0.0,ang,1.0
+1381.96,1386.56,SPEAKER_00,But the DPRK dispatches thousands of highly skilled IT workers around the world to generate,0.0,ang,1.0
+1386.56,1390.72,SPEAKER_00,"revenue that contributes to its weapons of mass destruction and ballistic missile programs,",0.0,ang,1.0
+1390.72,1393.24,SPEAKER_00,all in violation of US and US sanctions.,0.0,ang,1.0
+1393.24,1397.64,SPEAKER_00,"These IT workers take advantage of existing demands for specific IT skills, such as software",0.0,ang,1.0
+1397.64,1402.32,SPEAKER_00,"and mobile application development, to obtain freelance employment contracts from clients",0.0,ang,1.0
+1402.32,1406.24,SPEAKER_00,"around the world, including in North America, Europe, and East Asia.",0.0,ang,1.0
+1406.24,1410.0,SPEAKER_00,You know how Kusuke was talking to me about freelance websites?,0.016,neu,0.9982
+1410.0,1416.84,SPEAKER_01,I think things are starting to click from me here.,0.352,neu,0.9975
+1416.84,1420.76,SPEAKER_00,"Ladies and gentlemen, let me just say before I read this, I was completely against the",0.0,neu,1.0
+1420.76,1423.36,SPEAKER_00,idea that I was talking to someone from North Korea.,0.0,ang,1.0
+1423.36,1428.48,SPEAKER_00,But the workers may further obfuscate their identities and or location by subcontracting,0.0,ang,1.0
+1428.48,1430.6,SPEAKER_00,work to non-North Koreans.,0.0,ang,1.0
+1430.6,1432.04,SPEAKER_00,What is going on right now?,0.0,ang,1.0
+1432.04,1436.68,SPEAKER_00,Me being offered a job where I do an interview for someone and I'm basically the face of,0.0,ang,1.0
+1436.68,1438.32,SPEAKER_00,this dude as an employee.,0.0,neu,0.9971
+1438.32,1441.48,SPEAKER_00,That matches exactly what the sentence is saying.,0.0,neu,1.0
+1441.48,1444.84,SPEAKER_00,"And to make it clear, this dude isn't going to just work for the company and hack into",0.0,ang,1.0
+1444.84,1449.56,SPEAKER_00,"it, he might just straight up work for the company and actually give me that money.",0.0,ang,1.0
+1449.56,1455.36,SPEAKER_00,"Because as the FBI says, although DPRK IT workers normally engage in normal IT work distinct",0.0,ang,1.0
+1455.36,1458.52,SPEAKER_00,"from malicious cyber activity, so they just work for the company normally.",0.0,neu,0.9997
+1458.52,1463.44,SPEAKER_00,"They will do that, but in some cases they will use their privileged access gained as contractors",0.0,ang,1.0
+1463.44,1468.08,SPEAKER_00,"to enable the DPRK's malicious cyber intrusion, so they will put in backdoors depending on",0.0,ang,1.0
+1468.08,1469.08,SPEAKER_00,what the goal is.,0.0,hap,0.9437
+1469.08,1473.36,SPEAKER_00,The unfortunate thing is that there are likely instances where the workers are subjected,0.0,neu,1.0
+1473.36,1474.76,SPEAKER_00,to forced labor.,0.0,ang,0.9997
+1474.76,1483.84,SPEAKER_00,But it's pretty clear that if the workers are trying to hide their identities by subcontracting,0.0,hap,0.7985
+1483.84,1488.32,SPEAKER_00,"work, they're trying to recruit people to work with North Korean spies.",0.0,ang,1.0
+1488.32,1493.64,SPEAKER_00,"Which then brings me to the case with Kusuke, because if I just ask him straight up,",0.0,neu,0.608
+1493.64,1496.52,SPEAKER_00,"hey are you in North Korean, he's going to say no I'm Japanese.",0.0,neu,1.0
+1496.52,1502.48,SPEAKER_00,"But I don't know, it's kind of tough to tell when he has a Korean sounding accent.",0.0,neu,1.0
+1502.48,1505.92,SPEAKER_00,So how do I know if this guy is from North Korea or not?,0.0,neu,1.0
+1505.92,1508.2,SPEAKER_00,Am I actually talking to a fucking North Korean spy?,0.0,ang,0.9977
+1508.2,1510.8,SPEAKER_00,And then a ring dinger of an idea hit me.,0.0,ang,1.0
+1510.8,1514.76,SPEAKER_00,"I hit up Kusuke, good morning Kusuke, how are you doing?",0.0,ang,1.0
+1514.76,1519.56,SPEAKER_00,"I'm ready to work, ladies and gentlemen, I got in a call with our good little Kusuke.",0.0,ang,1.0
+1519.56,1522.2,SPEAKER_00,"Oh there we go, I see you again, okay.",0.159,neu,1.0
+1522.2,1523.2,SPEAKER_00,Access.,0.53,neu,0.9973
+1523.2,1524.2,SPEAKER_00,There we go.,0.0,neu,1.0
+1524.2,1525.2,SPEAKER_00,Alright.,0.9,hap,1.0
+1525.2,1529.76,SPEAKER_01,What is this background?,0.035,hap,1.0
+1529.76,1531.96,SPEAKER_00,That is one nervous chuckle.,0.0,neu,1.0
+1531.96,1536.32,SPEAKER_00,"If this guy is North Korean and I say something bad about North Korea, he would instantly",0.0,ang,1.0
+1536.32,1538.64,SPEAKER_00,freeze up and leave before he gets in trouble.,0.0,ang,1.0
+1538.64,1541.04,SPEAKER_00,"So I do what had to be done, folks.",0.0,ang,1.0
+1541.04,1543.16,SPEAKER_00,I think that one should work.,0.0,neu,1.0
+1543.16,1545.16,SPEAKER_00,What do you think?,0.0,neu,1.0
+1545.16,1550.16,SPEAKER_01,Just a second.,0.0,neu,1.0
+1550.16,1556.24,SPEAKER_01,"I will call you up to two minutes, okay?",0.002,neu,1.0
+1556.24,1557.24,SPEAKER_00,"Oh, okay.",0.0,hap,1.0
+1557.24,1558.56,SPEAKER_00,He blocked me.,0.0,hap,1.0
+1558.56,1561.92,SPEAKER_00,"And that made me think, if this dude is a North Korean spy, there's",0.0,ang,1.0
+1561.92,1563.56,SPEAKER_00,"gotta be more spies, right?",0.0,neu,0.9486
+1563.56,1566.96,SPEAKER_00,Well you know Mr. Weed that wanted a senior full stack developer.,0.0,ang,1.0
+1566.96,1570.16,SPEAKER_00,"You know the guy I wrote, naughty fan fiction about minions too.",0.0,neu,1.0
+1570.16,1573.84,SPEAKER_00,"I decided to contact him again today, you know, I was on a roll.",0.0,ang,1.0
+1573.84,1577.0,SPEAKER_00,"Just trying to prove whether or not these people are actually North Korean, because one",0.0,ang,1.0
+1577.0,1580.84,SPEAKER_00,"might be a mistake, but two people might have something going for us.",0.0,ang,0.6355
+1580.84,1582.36,SPEAKER_00,"High weed, how are you doing today?",0.0,ang,0.9465
+1582.36,1583.36,SPEAKER_00,I'm good.,0.0,ang,1.0
+1583.36,1584.36,SPEAKER_00,Thank you for asking how about you.,0.0,neu,1.0
+1584.36,1585.36,SPEAKER_00,"I'm good, thank you, thank you.",0.0,neu,1.0
+1585.36,1588.28,SPEAKER_00,"Here's the thing man, I need some hope with some translation.",0.0,neu,1.0
+1588.28,1589.6,SPEAKER_00,What languages do you speak?,0.0,ang,1.0
+1589.6,1590.6,SPEAKER_00,Finish.,0.0,hap,1.0
+1590.6,1592.52,SPEAKER_00,I just hope for some help in Korean.,0.0,ang,1.0
+1592.52,1594.52,SPEAKER_00,Any other languages or just finish?,0.0,ang,1.0
+1594.52,1595.52,SPEAKER_00,English.,0.0,ang,1.0
+1595.52,1597.08,SPEAKER_00,Now you can see we're having a pretty all right conversation.,0.0,ang,1.0
+1597.08,1598.76,SPEAKER_00,He's responding to me within a minute.,0.0,ang,1.0
+1598.76,1599.76,SPEAKER_00,"1019, 1019, 1020.",0.0,ang,1.0
+1599.76,1602.28,SPEAKER_00,"I don't know, stick drifter, something.",0.0,ang,1.0
+1602.28,1605.56,SPEAKER_00,I accidentally send him in Korean that Kim Jong-un is fat.,0.0,ang,1.0
+1605.56,1606.92,SPEAKER_00,"I say, whoops my bad.",0.0,neu,0.9928
+1606.92,1608.52,SPEAKER_00,Are you fluent in finish?,0.0,neu,1.0
+1608.52,1610.72,SPEAKER_00,"Are you a native speaker, you know, a couple minutes later?",0.0,neu,1.0
+1610.72,1612.4,SPEAKER_00,Are we gonna move forward with the job?,0.0,neu,1.0
+1612.4,1613.4,SPEAKER_00,Are you there?,0.0,hap,0.9995
+1613.4,1617.52,SPEAKER_00,"But Howard, again, had to deal with me this morning being excited to talk to all my new",0.0,ang,1.0
+1617.52,1618.52,SPEAKER_00,friends.,0.0,neu,0.9997
+1618.52,1620.84,SPEAKER_00,"Howard, someone else was sending messages through my account.",0.0,neu,1.0
+1620.84,1621.84,SPEAKER_00,How are you doing today?,0.0,ang,1.0
+1621.84,1622.84,SPEAKER_00,How I'm doing good?,0.0,ang,0.9979
+1622.84,1623.84,SPEAKER_00,What about you?,0.0,neu,1.0
+1623.84,1625.84,SPEAKER_00,"Then he asked for my ID card and I'm like, nah, nah, nah, nah, nah.",0.0,neu,1.0
+1625.84,1627.36,SPEAKER_00,I need some help first.,0.0,neu,0.9835
+1627.36,1629.92,SPEAKER_00,I need help with some translating something I was sent.,0.0,ang,1.0
+1629.92,1633.36,SPEAKER_00,"And well, I did what I had to do again, folks.",0.0,hap,1.0
+1633.36,1634.72,SPEAKER_00,So Howard is typing.,0.0,neu,1.0
+1634.72,1640.56,SPEAKER_00,I send in my reverse curse technique of Kim Jong-un is fat.,0.0,neu,1.0
+1640.56,1642.32,SPEAKER_00,You want me to do interview?,0.0,hap,1.0
+1642.32,1643.8,SPEAKER_00,Okay.,0.0,neu,1.0
+1643.8,1645.6,SPEAKER_00,What do you need?,0.0,ang,1.0
+1646.44,1647.44,SPEAKER_00,Eh.,0.0,hap,0.974
+1647.44,1652.8,SPEAKER_00,I think I stumbled across something that's gonna require a lot of explaining to men in,0.0,hap,1.0
+1652.8,1655.32,SPEAKER_00,black suits that show up randomly at my door.,0.0,ang,0.9626
+1655.32,1658.96,SPEAKER_00,But the crazy thing about this whole entire thing is specifically with Kusuke.,0.0,ang,1.0
+1658.96,1660.92,SPEAKER_00,He promised me a lot of money.,0.0,ang,1.0
+1660.92,1665.68,SPEAKER_00,And the crazy thing is that if I was either desperate for money or not skeptical about,0.0,ang,1.0
+1665.68,1671.04,SPEAKER_00,"this whole thing, I wouldn't have any idea whatsoever that I was funding North Korea",0.0,ang,1.0
+1671.04,1675.16,SPEAKER_00,by working with this dude or putting some tech company at risk of espionage.,0.0,ang,1.0
+1675.16,1679.72,SPEAKER_00,"And I know some of you guys are some big hustle boy-os, you know, you and you take grind",0.0,neu,1.0
+1679.72,1680.72,SPEAKER_00,set.,0.0,neu,1.0
+1680.72,1682.0,SPEAKER_00,You want to make gazillions of dollars a minute.,0.0,neu,1.0
+1682.0,1684.52,SPEAKER_00,"Note text to speech, you just gave me a new business idea.",0.0,ang,1.0
+1684.52,1686.2,SPEAKER_00,Why don't I work with the North Koreans?,0.0,ang,1.0
+1686.2,1687.2,SPEAKER_00,Don't.,0.0,ang,0.7556
+1687.2,1690.8,SPEAKER_00,"Because as I was researching, I found this article by ours Technica.",0.0,neu,0.9714
+1690.8,1696.24,SPEAKER_00,Arizona woman accused of helping North Koreans get remote IT jobs at 300 companies.,0.0,ang,1.0
+1696.24,1702.24,SPEAKER_00,"Good old Christina Mary Chapman, 49, living in Arizona allegedly raised $6.8 million.",0.0,ang,1.0
+1702.24,1706.4,SPEAKER_00,And she allegedly funneled the money into North Koreans munitions industry department.,0.0,ang,1.0
+1706.4,1709.44,SPEAKER_00,You know how I was controlling the money from Kusuke?,0.0,neu,1.0
+1709.44,1711.28,SPEAKER_00,I'm sending the money to someone.,0.0,ang,1.0
+1711.28,1713.2,SPEAKER_00,And you want to know how America's going to look at it?,0.0,neu,0.9996
+1713.2,1716.52,SPEAKER_00,They're going to say that I was funneling money into North Korea.,0.0,ang,1.0
+1716.52,1719.8,SPEAKER_00,You can see how this is extremely f***ing dangerous.,0.0,ang,1.0
+1719.8,1724.16,SPEAKER_00,"In the indictment on this lady, prosecutors wrote, the conspiracy perpetrated a staggering",0.0,ang,1.0
+1724.16,1728.72,SPEAKER_00,fraud on a multitude of industries at the expense of generally unknowing US companies and,0.0,ang,1.0
+1728.72,1729.72,SPEAKER_00,persons.,0.0,ang,1.0
+1729.72,1734.92,SPEAKER_00,"It impacted more than 300 US companies, compromised more than 60 identities of US persons, calls",0.0,ang,1.0
+1734.92,1739.08,SPEAKER_00,false information to be conveyed to DHS on more than 100 occasions.,0.0,ang,1.0
+1739.08,1742.32,SPEAKER_00,"I gotta breathe, there's so much stuff that she did wrong.",0.052,hap,1.0
+1742.32,1747.08,SPEAKER_00,"Created false tax liabilities for more than 35 US persons, and resulted in at least $6.8",0.0,ang,1.0
+1747.08,1750.48,SPEAKER_00,million of revenue to be generated for the overseas IT workers.,0.0,ang,1.0
+1750.48,1755.2,SPEAKER_00,"The overseas IT workers worked at Blue Chip US companies, including a top five national",0.0,ang,1.0
+1755.2,1759.36,SPEAKER_00,"television network and media company, a premier Silicon Valley technology company, an",0.0,ang,1.0
+1759.36,1763.32,SPEAKER_00,"aerospace and defense manufacturer, that's probably Lockheed Martin, an iconic American",0.0,ang,0.9267
+1763.32,1767.72,SPEAKER_00,"car manufacturer, probably Ford, a high end retail chain, and one of the most recognizable",0.0,ang,1.0
+1767.72,1772.28,SPEAKER_00,"media and entertainment companies in the world, all of which for Fortune 500 companies.",0.0,ang,1.0
+1772.28,1776.6,SPEAKER_00,It turns out what happened is that Chapman operated a laptop farm at one of her houses that,0.0,ang,1.0
+1776.6,1780.76,SPEAKER_00,gives the employees the impression of the North Korean IT staffers were working within,0.0,ang,1.0
+1780.76,1781.76,SPEAKER_00,the US.,0.0,neu,1.0
+1781.76,1784.24,SPEAKER_00,You know how Mr. Kusuke wanted to log into my laptop?,0.0,ang,1.0
+1784.24,1786.04,SPEAKER_00,He's trying to do the same thing to me!,0.0,ang,0.6179
+1786.04,1789.56,SPEAKER_00,"And when you work at a company, you usually get a nice free laptop from your employer,",0.011,ang,1.0
+1789.56,1793.1,SPEAKER_00,"and I think that the cycle would continue, you know, if I was stupid enough and needed",0.0,ang,1.0
+1793.1,1797.04,SPEAKER_00,"money to fix both of my legs, I would probably follow in Chapman's footsteps.",0.0,ang,1.0
+1797.04,1799.44,SPEAKER_00,The lady that did this was arrested on Wednesday.,0.0,ang,1.0
+1799.44,1804.4,SPEAKER_00,"But if she was convicted, she would face 97 and a half years in prison, so as much as",0.0,ang,1.0
+1804.4,1806.08,SPEAKER_00,you might be a big money-michael.,0.0,neu,0.9757
+1806.08,1808.96,SPEAKER_00,"With 97 years in prison, I don't think it's worth it.",0.0,ang,1.0
+1808.96,1812.68,SPEAKER_00,"I would say though, it's a pretty sick prison story on how you helped North Korea.",0.0,ang,1.0
+1812.68,1816.64,SPEAKER_00,"Anyways gamers, I already know the FBI or North Korea will probably be knocking on my",0.0,ang,1.0
+1816.64,1820.44,SPEAKER_00,"door, so if I disappear for a long time, it wasn't by my own choice.",0.0,ang,1.0
+1820.44,1823.04,SPEAKER_00,"Anyways gamers, bye bye, I love you!",0.0,hap,1.0
