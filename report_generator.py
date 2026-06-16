@@ -69,6 +69,16 @@ th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #eee
     font-size: 0.8rem;
     color: #888;
     text-transform: capitalize;
+    margin-right: 0.5rem;
+}
+.lang-badge {
+    font-size: 0.75rem;
+    background: #f0fdf4;
+    color: #16a34a;
+    border-radius: 4px;
+    padding: 0.1rem 0.4rem;
+    font-family: monospace;
+    margin-right: 0.5rem;
 }
 .text { margin: 0.3rem 0 0 0; line-height: 1.5; }
 </style>
@@ -110,6 +120,25 @@ def render_stats_section(stats):
             <td>{data['percent']}%</td>
         </tr>"""
 
+    lang_rows = ""
+    for lang, data in stats.get("language_distribution", {}).items():
+        lang_rows += f"""
+        <tr>
+            <td>{html.escape(lang)}</td>
+            <td>{data['count']}</td>
+            <td>{data['percent']}%</td>
+        </tr>"""
+
+    lang_section = f"""
+    <section class="card">
+        <h2>Language Distribution</h2>
+        <table>
+            <tr><th>Language</th><th>Segments</th><th>Share</th></tr>
+            {lang_rows}
+        </table>
+    </section>
+    """ if lang_rows else ""
+
     return f"""
     <section class="card">
         <h2>Overview</h2>
@@ -134,6 +163,7 @@ def render_stats_section(stats):
             {emotion_rows}
         </table>
     </section>
+    {lang_section}
     """
 
 
@@ -185,11 +215,14 @@ def render_transcript_section(segments, colors):
         speaker = seg.get("speaker", "UNKNOWN")
         color = colors.get(speaker, "#999999")
         emotion = seg.get("emotion", "neutral")
+        language = seg.get("language", "")
+        lang_badge = f'<span class="lang-badge">{html.escape(language)}</span>' if language and language != "unknown" else ""
         rows += f"""
         <div class="segment">
             <span class="timestamp">{seg['start']:.2f}s - {seg['end']:.2f}s</span>
             <span class="speaker" style="background-color: {color}">{html.escape(speaker)}</span>
             <span class="emotion">{html.escape(emotion)}</span>
+            {lang_badge}
             <p class="text">{html.escape(seg['text'])}</p>
         </div>"""
 

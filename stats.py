@@ -51,6 +51,22 @@ def compute_emotion_distribution(segments):
     return distribution
 
 
+def compute_language_distribution(segments):
+    counts = {}
+    for seg in segments:
+        lang = seg.get("language", "unknown")
+        counts[lang] = counts.get(lang, 0) + 1
+
+    total = sum(counts.values())
+    return {
+        lang: {
+            "count": count,
+            "percent": round((count / total * 100) if total > 0 else 0.0, 2)
+        }
+        for lang, count in counts.items()
+    }
+
+
 def compute_emotion_by_speaker(segments):
     speaker_emotions = {}
     for seg in segments:
@@ -91,6 +107,7 @@ def compute_dataset_stats(segments):
             "avg_segment_length_seconds": 0.0,
             "num_speakers": 0,
             "emotion_distribution": {},
+            "language_distribution": {},
             "speaker_stats": {},
             "emotion_by_speaker": {}
         }
@@ -106,6 +123,7 @@ def compute_dataset_stats(segments):
         "avg_segment_length_seconds": round(total_duration / len(segments), 2),
         "num_speakers": len(speakers),
         "emotion_distribution": compute_emotion_distribution(segments),
+        "language_distribution": compute_language_distribution(segments),
         "speaker_stats": compute_speaker_stats(segments),
         "emotion_by_speaker": compute_emotion_by_speaker(segments)
     }

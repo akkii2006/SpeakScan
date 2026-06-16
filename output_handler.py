@@ -29,6 +29,13 @@ def update_results(video_dir: str, segments: list[dict]) -> str:
     return results_path
 
 
+def is_already_processed(base_output_dir: str, title: str) -> bool:
+    """Idempotency check — returns True if this video has already been fully processed."""
+    video_dir = os.path.join(base_output_dir, title)
+    required_files = ["results.json", "transcript.txt", "stats.json", "dataset.json"]
+    return all(os.path.exists(os.path.join(video_dir, f)) for f in required_files)
+
+
 def view_results(video_dir: str):
     transcript_path = os.path.join(video_dir, "transcript.txt")
     results_path = os.path.join(video_dir, "results.json")
@@ -45,7 +52,7 @@ def view_results(video_dir: str):
         with open(results_path, "r", encoding="utf-8") as f:
             data = json.load(f)
         for seg in data[:5]:
-            print(f"[{seg['start']}s - {seg['end']}s] {seg.get('speaker', '?')} | {seg.get('emotion', '?')} | {seg['text']}")
+            print(f"[{seg['start']}s - {seg['end']}s] {seg.get('speaker', '?')} | {seg.get('emotion', '?')} | {seg.get('language', '?')} | {seg['text']}")
         if len(data) > 5:
             print(f"... and {len(data) - 5} more segments in results.json")
     else:

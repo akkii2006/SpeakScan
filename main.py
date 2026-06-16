@@ -18,10 +18,10 @@ os.environ["TRANSFORMERS_VERBOSITY"] = "error"
 os.environ["SPEECHBRAIN_VERBOSITY"] = "error"
 
 from downloader import download_audio
-from transcriber import transcribe, get_full_transcript, get_segments, load_whisper_model
-from diarizer import diarize, merge_diarization_with_transcript
+from transcriber import transcribe, get_full_transcript, get_segments, load_whisper_model, get_detected_language
+from diarizer import diarize, merge_diarization_with_transcript, export_rttm
 from emotion_tagger import load_emotion_classifier, tag_emotions
-from output_handler import save_outputs, view_results, update_results
+from output_handler import save_outputs, view_results, update_results, is_already_processed
 from dataset_converter import convert_to_dataset
 from visualizer import generate_visualizations
 from tts_dataset import generate_tts_dataset
@@ -30,9 +30,11 @@ from stats import generate_stats_report
 from keyword_extractor import generate_keywords_report
 from report_generator import generate_report
 from playlist import is_playlist_url, expand_playlist
+from vad import load_vad_model, get_speech_segments
 
 OUTPUT_DIR = "outputs"
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
+MAX_RETRIES = 3
 
 
 def get_hf_token() -> str:
@@ -99,6 +101,7 @@ def get_pipeline_config():
     print("\nPipeline configuration (press Enter for defaults):\n")
 
     quality_enabled = input("Enable audio quality filtering? (Y/n): ").strip().lower() != "n"
+    vad_enabled = input("Enable VAD pre-processing? (Y/n): ").strip().lower() != "n"
 
     print("\nText normalization for dataset exports:")
     lowercase = input("  Lowercase text? (y/N): ").strip().lower() == "y"
@@ -120,7 +123,7 @@ def get_pipeline_config():
         "expand_numbers": expand_nums
     }
 
-    return quality_config, normalize_config
+    return quality_config, normalize_config, vad_enabled
 
 
 def collect_urls(mode: str) -> list[str]:
@@ -157,25 +160,52 @@ def expand_urls(raw_urls: list[str]) -> list[str]:
     return expanded
 
 
-def run_pipeline(url: str, hf_token: str, emotion_classifier, whisper_model):
+def run_pipeline(url: str, hf_token: str, emotion_classifier, whisper_model, vad_model, vad_utils, vad_enabled: bool):
     print()
     title, audio_path = run_with_spinner("Downloading audio", download_audio, url, OUTPUT_DIR)
     print(f"  Title: {title}")
 
+    vad_segments = None
+    if vad_enabled:
+        vad_segments = safe_run_with_spinner("Running VAD", get_speech_segments, audio_path, vad_model, vad_utils)
+        print(f"  VAD: {len(vad_segments)} speech region(s) detected")
+
     whisper_result = safe_run_with_spinner("Transcribing", transcribe, audio_path, whisper_model)
     full_transcript = get_full_transcript(whisper_result)
     transcript_segments = get_segments(whisper_result)
-    print(f"  Segments: {len(transcript_segments)}")
+    detected_language = get_detected_language(whisper_result)
+    print(f"  Segments: {len(transcript_segments)} | Language: {detected_language}")
 
-    diar_segments = safe_run_with_spinner("Running speaker diarization", diarize, audio_path, hf_token)
+    diar_segments = safe_run_with_spinner("Running speaker diarization", diarize, audio_path, hf_token, vad_segments)
     print(f"  Speakers found: {len(set(s['speaker'] for s in diar_segments))}")
+
+    video_dir = os.path.join(OUTPUT_DIR, title)
+    rttm_path = os.path.join(video_dir, f"{title}.rttm")
+    os.makedirs(video_dir, exist_ok=True)
+    export_rttm(diar_segments, title, rttm_path)
 
     merged = merge_diarization_with_transcript(diar_segments, transcript_segments)
     tagged = safe_run_with_spinner("Tagging emotions", tag_emotions, merged, emotion_classifier, audio_path)
-    video_dir = os.path.join(OUTPUT_DIR, title)
     run_with_spinner("Saving outputs", save_outputs, title, full_transcript, tagged, OUTPUT_DIR)
 
     return title, audio_path, video_dir, diar_segments
+
+
+def run_pipeline_with_retry(url: str, hf_token: str, emotion_classifier, whisper_model,
+                             vad_model, vad_utils, vad_enabled: bool, retries: int = MAX_RETRIES):
+    last_error = None
+    for attempt in range(1, retries + 1):
+        try:
+            return run_pipeline(url, hf_token, emotion_classifier, whisper_model, vad_model, vad_utils, vad_enabled)
+        except Exception as e:
+            last_error = e
+            if attempt < retries:
+                wait = 2 ** attempt
+                print(f"  Attempt {attempt} failed: {e}. Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"  All {retries} attempts failed.")
+    raise last_error
 
 
 def print_stats_summary(stats: dict):
@@ -189,6 +219,12 @@ def print_stats_summary(stats: dict):
     if top_emotions:
         summary = ", ".join(f"{e} ({d['percent']}%)" for e, d in top_emotions[:3])
         print(f"  Top emotions: {summary}")
+
+    lang_dist = stats.get("language_distribution", {})
+    if lang_dist:
+        top_langs = sorted(lang_dist.items(), key=lambda x: x[1]["percent"], reverse=True)
+        lang_summary = ", ".join(f"{l} ({d['percent']}%)" for l, d in top_langs[:3])
+        print(f"  Languages: {lang_summary}")
 
 
 def process_all(title: str, audio_path: str, video_dir: str, diar_segments: list[dict],
@@ -259,6 +295,9 @@ def main():
 
         print("Loading Whisper model...")
         whisper_model = load_whisper_model()
+
+        print("Loading VAD model...")
+        vad_model, vad_utils = load_vad_model()
     except torch.cuda.OutOfMemoryError as e:
         torch.cuda.empty_cache()
         print(f"Fatal: GPU out of memory while loading models: {e}")
@@ -281,18 +320,49 @@ def main():
         print("No videos to process.")
         return
 
-    quality_config, normalize_config = get_pipeline_config()
+    quality_config, normalize_config, vad_enabled = get_pipeline_config()
 
     print(f"\nProcessing {len(urls)} video(s)...")
     processed = []
+    skipped = []
+    failed = []
+
     for idx, url in enumerate(urls, 1):
         print(f"\n[{idx}/{len(urls)}] {url}")
+
+        # Idempotency: derive title to check if already done
+        # We do a lightweight title fetch to check before loading full pipeline
         try:
-            title, audio_path, video_dir, diar_segments = run_pipeline(url, hf_token, emotion_classifier, whisper_model)
+            import subprocess
+            info = subprocess.run(
+                ["yt-dlp", "--print", "title", "--no-playlist", url],
+                capture_output=True, text=True
+            )
+            candidate_title = info.stdout.strip().replace("/", "_").replace("\\", "_") if info.returncode == 0 else None
+        except Exception:
+            candidate_title = None
+
+        if candidate_title and is_already_processed(OUTPUT_DIR, candidate_title):
+            print(f"  Already processed — skipping. (Delete outputs/{candidate_title}/ to reprocess)")
+            skipped.append(candidate_title)
+            continue
+
+        try:
+            title, audio_path, video_dir, diar_segments = run_pipeline_with_retry(
+                url, hf_token, emotion_classifier, whisper_model, vad_model, vad_utils, vad_enabled
+            )
             process_all(title, audio_path, video_dir, diar_segments, quality_config, normalize_config)
             processed.append((title, video_dir))
         except Exception as e:
             print(f"  Error: {e}. Skipping.")
+            failed.append(url)
+
+    if skipped:
+        print(f"\nSkipped (already processed): {len(skipped)}")
+    if failed:
+        print(f"Failed URLs ({len(failed)}):")
+        for u in failed:
+            print(f"  {u}")
 
     if processed:
         open_browser = input("\nOpen results in browser? (y/N): ").strip().lower() == "y"

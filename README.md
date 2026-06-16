@@ -1,6 +1,6 @@
 # SpeakScan
 
-Audio pipeline that downloads YouTube videos, transcribes them, identifies speakers, tags emotions, and generates training data for speech and TTS models.
+Audio pipeline that downloads YouTube videos, transcribes them, identifies speakers, tags emotions, detects language, and generates training data for speech and TTS models.
 
 GitHub: https://github.com/akkii2006/SpeakScan
 
@@ -9,29 +9,33 @@ GitHub: https://github.com/akkii2006/SpeakScan
 ## What it does
 
 1. Downloads audio from a YouTube URL (or expands a playlist/channel URL into individual videos) using yt-dlp
-2. Transcribes the audio using Whisper
-3. Runs speaker diarization using pyannote to identify who spoke when
-4. Tags each segment with an emotion label using a wav2vec2 classifier trained on IEMOCAP
-5. Evaluates audio quality per segment (SNR, clipping, overlapping speech) and flags low-quality segments
-6. Saves a transcript, structured JSON, and CSV to an output folder per video
-7. Generates waveform, mel spectrogram, segment energy, and emotion timeline visualizations for the full audio
-8. Computes dataset stats: total duration, per-speaker talk time and turn counts, emotion distribution
-9. Extracts keywords/topics from the transcript
-10. Exports an annotation dataset JSON, with optional text normalization (lowercase, punctuation removal, number expansion)
-11. Generates a full TTS training dataset - per-segment mel spectrograms as .npy files paired with text, speaker, and emotion labels, with optional quality filtering
-12. Builds a self-contained HTML report combining the transcript, visualizations, stats, and keywords, which can be opened in your browser automatically
+2. Runs Voice Activity Detection (VAD) using silero-vad to identify speech regions and skip silence before diarization
+3. Transcribes the audio using Whisper, with per-segment language detection
+4. Runs speaker diarization using pyannote to identify who spoke when, and exports an RTTM file
+5. Tags each segment with an emotion label using a wav2vec2 classifier trained on IEMOCAP
+6. Evaluates audio quality per segment (SNR, clipping, overlapping speech) and flags low-quality segments
+7. Saves a transcript, structured JSON, and CSV to an output folder per video
+8. Generates waveform, mel spectrogram, segment energy, and emotion timeline visualizations for the full audio
+9. Computes dataset stats: total duration, per-speaker talk time and turn counts, emotion distribution, language distribution
+10. Extracts keywords/topics from the transcript
+11. Exports an annotation dataset JSON, with optional text normalization (lowercase, punctuation removal, number expansion)
+12. Generates a full TTS training dataset - per-segment mel spectrograms as .npy files paired with text, speaker, emotion, and language labels, with optional quality filtering
+13. Builds a self-contained HTML report combining the transcript, visualizations, stats, and keywords, which can be opened in your browser automatically
+14. Skips already-processed videos automatically (idempotency) and retries failed steps with exponential backoff
 
 ---
 
 ## Use cases
 
-**TTS model training** - The TTS dataset pairs each transcript segment with its mel spectrogram (.npy), speaker ID, and emotion label. This is the input-output format used by models like Tacotron and VITS: text in, spectrogram out. The pipeline generates the full dataset automatically, covering every segment in the audio with a corresponding spectrogram file ready for training. Low-quality segments (low SNR, clipping, heavy speaker overlap) can be filtered out automatically so they don't degrade training.
+**TTS model training** - The TTS dataset pairs each transcript segment with its mel spectrogram (.npy), speaker ID, emotion label, and language. This is the input-output format used by models like Tacotron and VITS: text in, spectrogram out. The pipeline generates the full dataset automatically, covering every segment in the audio with a corresponding spectrogram file ready for training. Low-quality segments (low SNR, clipping, heavy speaker overlap) can be filtered out automatically so they don't degrade training.
 
-**ASR dataset construction** - The annotation dataset pairs timestamped transcripts with speaker labels and emotion tags, ready for fine-tuning ASR models on specific speaker styles or emotional speech. Optional text normalization (lowercase, punctuation stripping, number expansion) lets you match the text format your training pipeline expects.
+**ASR dataset construction** - The annotation dataset pairs timestamped transcripts with speaker labels, emotion tags, and language codes, ready for fine-tuning ASR models on specific speaker styles, emotional speech, or multilingual content. Optional text normalization (lowercase, punctuation stripping, number expansion) lets you match the text format your training pipeline expects.
 
-**Speech research** - Waveform, spectrogram, segment energy, and emotion timeline visualizations make it easy to analyze speech patterns, pacing, and emotional variation across a recording. Speaker talk-time stats and emotion distributions give a quick read on conversation dynamics.
+**Multilingual speech data** - Per-segment language detection via Whisper makes it easy to identify and separate segments by language across mixed-language recordings — useful for Indian content where speakers switch between Hindi, English, Tamil, and other languages.
 
-**Playlist/channel processing** - Pass a playlist or channel URL and SpeakScan will expand it into individual videos and process them all in batch.
+**Speech research** - Waveform, spectrogram, segment energy, and emotion timeline visualizations make it easy to analyze speech patterns, pacing, and emotional variation across a recording. Speaker talk-time stats, emotion distributions, and language breakdowns give a quick read on conversation dynamics.
+
+**Playlist/channel processing** - Pass a playlist or channel URL and SpeakScan will expand it into individual videos and process them all in batch. Already-processed videos are skipped automatically on re-runs, and failed videos are retried up to 3 times before being skipped.
 
 ---
 
@@ -66,13 +70,14 @@ python main.py
 The pipeline will:
 
 1. Ask for your HuggingFace token (if `HF_TOKEN` is not set)
-2. Load the emotion classifier and Whisper model (first run downloads ~1GB of weights, one-time cost)
+2. Load the emotion classifier, Whisper model, and VAD model (first run downloads ~1GB of weights, one-time cost)
 3. Ask for single or batch mode
 4. Prompt for a YouTube URL (or URLs in batch mode) - playlist/channel URLs are automatically expanded into individual videos
 5. Ask for pipeline configuration:
    - Enable audio quality filtering (default: yes)
+   - Enable VAD pre-processing (default: yes)
    - Lowercase text, remove punctuation, expand numbers for dataset exports (default: no)
-6. Process each video through the full pipeline
+6. Process each video through the full pipeline — already-processed videos are skipped automatically
 7. Ask whether to open the generated HTML report(s) in your browser
 
 ---
@@ -83,13 +88,14 @@ The pipeline will:
 outputs/
   {video_title}/
     transcript.txt            full video transcript
-    results.json              segments with speaker, emotion, timestamps, quality flags
+    results.json              segments with speaker, emotion, language, timestamps, quality flags
     results.csv               same data in CSV format
+    {title}.rttm              diarization output in standard RTTM format
     waveform.png              full audio waveform with speaker segments color-coded
     mel_spectrogram.png       mel spectrogram of the full audio
     segment_energy.png        RMS energy per segment over time
-    emotion_timeline.png       emotion per segment over time, sized by confidence, colored by speaker
-    stats.json                dataset stats, speaker talk-time, emotion distribution, emotion timeline data
+    emotion_timeline.png      emotion per segment over time, sized by confidence, colored by speaker
+    stats.json                dataset stats, speaker talk-time, emotion distribution, language distribution, emotion timeline data
     keywords.json             extracted keywords/topics
     dataset.json              annotation dataset
     tts_dataset.json          TTS training dataset
@@ -109,22 +115,11 @@ outputs/
     "end": 5.0,
     "speaker": "SPEAKER_00",
     "text": "So a couple days ago, I dropped a Twitter thread.",
+    "language": "en",
     "emotion": "neu",
     "emotion_score": 1.0,
     "overlap_ratio": 0.0,
     "snr_db": 18.4,
-    "quality_flags": [],
-    "quality_ok": true
-  },
-  {
-    "start": 5.32,
-    "end": 6.8,
-    "speaker": "SPEAKER_00",
-    "text": "Yes, I still call it Twitter.",
-    "emotion": "neu",
-    "emotion_score": 1.0,
-    "overlap_ratio": 0.0,
-    "snr_db": 17.9,
     "quality_flags": [],
     "quality_ok": true
   }
@@ -144,17 +139,7 @@ outputs/
     "raw_text": "So a couple days ago, I dropped a Twitter thread.",
     "emotion": "neu",
     "emotion_score": 1.0,
-    "quality_flags": []
-  },
-  {
-    "audio_source": "video_title",
-    "start": 5.32,
-    "end": 6.8,
-    "speaker": "SPEAKER_00",
-    "text": "yes i still call it twitter",
-    "raw_text": "Yes, I still call it Twitter.",
-    "emotion": "neu",
-    "emotion_score": 1.0,
+    "language": "en",
     "quality_flags": []
   }
 ]
@@ -176,6 +161,7 @@ outputs/
     "raw_text": "So a couple days ago, I dropped a Twitter thread.",
     "emotion": "neu",
     "emotion_score": 1.0,
+    "language": "en",
     "quality_flags": [],
     "spectrogram": "outputs/video_title/spectrograms/seg_0000.npy",
     "sample_rate": 22050,
@@ -199,6 +185,10 @@ If audio quality filtering is enabled, segments flagged with quality issues (low
     "neu": { "count": 301, "percent": 48.01 },
     "ang": { "count": 254, "percent": 40.51 },
     "hap": { "count": 72, "percent": 11.48 }
+  },
+  "language_distribution": {
+    "en": { "count": 580, "percent": 92.5 },
+    "hi": { "count": 47, "percent": 7.5 }
   },
   "speaker_stats": {
     "SPEAKER_00": { "talk_time_seconds": 1414.5, "talk_time_percent": 76.85, "turn_count": 47 },
@@ -226,7 +216,8 @@ Lower YAKE scores indicate more relevant keywords.
 
 ## Models used
 
-- Transcription: [openai/whisper](https://github.com/openai/whisper) (base by default)
+- Transcription + language detection: [openai/whisper](https://github.com/openai/whisper) (base by default)
+- Voice activity detection: [silero-vad](https://github.com/snakers4/silero-vad)
 - Diarization: [pyannote/speaker-diarization-3.1](https://huggingface.co/pyannote/speaker-diarization-3.1)
 - Emotion classification: [speechbrain/emotion-recognition-wav2vec2-IEMOCAP](https://huggingface.co/speechbrain/emotion-recognition-wav2vec2-IEMOCAP)
 - Keyword extraction: [YAKE](https://github.com/LIAAD/yake)
@@ -241,6 +232,7 @@ Lower YAKE scores indicate more relevant keywords.
 - Mel spectrograms are generated at 22050Hz, 80 mel bands, matching standard TTS training configurations
 - PyTorch must be installed matching your CUDA version - see https://pytorch.org/get-started/locally
 - "UNKNOWN" speaker labels can appear for segments where no diarized speech overlaps the transcript segment
+- To reprocess a video that was previously completed, delete its folder under `outputs/` and re-run
 
 ---
 

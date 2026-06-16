@@ -2,7 +2,7 @@ from pyannote.audio import Pipeline
 import torch
 
 
-def diarize(audio_path: str, hf_token: str) -> list[dict]:
+def diarize(audio_path: str, hf_token: str, vad_segments: list[dict] | None = None) -> list[dict]:
     pipeline = Pipeline.from_pretrained(
         "pyannote/speaker-diarization-3.1",
         token=hf_token
@@ -23,6 +23,17 @@ def diarize(audio_path: str, hf_token: str) -> list[dict]:
         })
 
     return segments
+
+
+def export_rttm(diar_segments: list[dict], title: str, output_path: str):
+    """Export diarization segments to RTTM format."""
+    with open(output_path, "w", encoding="utf-8") as f:
+        for seg in diar_segments:
+            duration = round(seg["end"] - seg["start"], 3)
+            start = round(seg["start"], 3)
+            speaker = seg["speaker"]
+            # RTTM format: SPEAKER <file> <chnl> <tbeg> <tdur> <ortho> <stype> <name> <conf>
+            f.write(f"SPEAKER {title} 1 {start:.3f} {duration:.3f} <NA> <NA> {speaker} <NA>\n")
 
 
 def _overlap_ratio(start: float, end: float, speaker: str, diar_segments: list[dict]) -> float:
@@ -65,7 +76,7 @@ def merge_diarization_with_transcript(diar_segments: list[dict], transcript_segm
             "end": t_end,
             "speaker": speaker,
             "text": t_seg["text"],
-            # fraction of this segment's duration where another speaker was also active
+            "language": t_seg.get("language", "unknown"),
             "overlap_ratio": round(_overlap_ratio(t_start, t_end, speaker, diar_segments), 3)
         })
 

@@ -42,6 +42,7 @@ def convert_to_dataset(video_dir: str, title: str,
             "raw_text": text,
             "emotion": seg.get("emotion", "neutral"),
             "emotion_score": seg.get("emotion_score", 0.0),
+            "language": seg.get("language", "unknown"),
             "quality_flags": seg.get("quality_flags", [])
         })
 
