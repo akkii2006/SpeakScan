@@ -1,0 +1,229 @@
+{
+  "total_duration_seconds": 193.6,
+  "total_duration_hours": 0.0538,
+  "num_segments": 28,
+  "avg_segment_length_seconds": 6.91,
+  "num_speakers": 1,
+  "emotion_distribution": {
+    "neu": {
+      "count": 28,
+      "percent": 100.0
+    }
+  },
+  "language_distribution": {
+    "en": {
+      "count": 28,
+      "percent": 100.0
+    }
+  },
+  "speaker_stats": {
+    "SPEAKER_00": {
+      "talk_time_seconds": 193.6,
+      "talk_time_percent": 100.0,
+      "turn_count": 1
+    }
+  },
+  "emotion_by_speaker": {
+    "SPEAKER_00": {
+      "neu": 100.0
+    }
+  },
+  "emotion_timeline": [
+    {
+      "start": 0.0,
+      "end": 5.68,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 0.9995
+    },
+    {
+      "start": 5.68,
+      "end": 10.08,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 10.08,
+      "end": 14.48,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 14.48,
+      "end": 19.84,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 19.84,
+      "end": 23.92,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 23.92,
+      "end": 28.0,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 28.0,
+      "end": 32.4,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 32.4,
+      "end": 36.16,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 36.16,
+      "end": 40.88,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 40.88,
+      "end": 45.12,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 45.12,
+      "end": 48.88,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 48.88,
+      "end": 53.44,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 53.52,
+      "end": 57.68,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 57.68,
+      "end": 62.08,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 62.08,
+      "end": 68.0,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 68.0,
+      "end": 73.12,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 73.12,
+      "end": 78.72,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 79.36,
+      "end": 86.88,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 86.88,
+      "end": 91.28,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 91.28,
+      "end": 99.28,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 108.72,
+      "end": 125.52,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 139.52,
+      "end": 161.52,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 0.9938
+    },
+    {
+      "start": 161.92,
+      "end": 170.16,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 170.16,
+      "end": 175.2,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 175.2,
+      "end": 189.24,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 295.2,
+      "end": 317.96,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 317.96,
+      "end": 319.88,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    },
+    {
+      "start": 319.88,
+      "end": 324.12,
+      "speaker": "SPEAKER_00",
+      "emotion": "neu",
+      "emotion_score": 1.0
+    }
+  ]
+}
