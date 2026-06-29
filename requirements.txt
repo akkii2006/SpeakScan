@@ -12,3 +12,4 @@ numpy==2.4.3
 num2words==0.5.14
 yake==0.7.3
 silero-vad==6.2.1
+python-dotenv==1.1.1

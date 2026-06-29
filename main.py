@@ -10,6 +10,7 @@ import webbrowser
 from pathlib import Path
 
 import torch
+from dotenv import load_dotenv, set_key, dotenv_values
 
 warnings.filterwarnings("ignore")
 logging.disable(logging.CRITICAL)
@@ -30,24 +31,61 @@ from stats import generate_stats_report
 from keyword_extractor import generate_keywords_report
 from report_generator import generate_report
 from playlist import is_playlist_url, expand_playlist
-from vad import load_vad_model, get_speech_segments
+from vad import load_vad_model, get_speech_segments, filter_segments_by_vad
 
 OUTPUT_DIR = "outputs"
-HF_TOKEN = os.environ.get("HF_TOKEN", "")
 MAX_RETRIES = 3
+ENV_FILE = Path(".env")
+
+
+def load_env_token() -> str:
+    """Load HF_TOKEN from .env file if it exists."""
+    load_dotenv(ENV_FILE)
+    return os.environ.get("HF_TOKEN", "").strip()
+
+
+def save_env_token(token: str):
+    """Save HF_TOKEN to .env file in the project root."""
+    ENV_FILE.touch(exist_ok=True)
+    set_key(str(ENV_FILE), "HF_TOKEN", token)
+
+
+def set_token_command():
+    """Interactive flow to update the HF token in .env."""
+    token = input("Enter your new HuggingFace token: ").strip()
+    if not token:
+        print("No token entered. Aborted.")
+        return
+    save_env_token(token)
+    print(f"Token saved to {ENV_FILE.resolve()}")
 
 
 def get_hf_token() -> str:
-    token = HF_TOKEN
+    # 1. Check environment variable (already exported in shell)
+    token = os.environ.get("HF_TOKEN", "").strip()
+
+    # 2. Check .env file
+    if not token:
+        token = load_env_token()
+
+    # 3. Prompt the user
     if not token:
         if not sys.stdin.isatty():
             raise RuntimeError(
-                "HF_TOKEN environment variable not set and no interactive "
+                "HF_TOKEN not set in environment or .env and no interactive "
                 "terminal available to prompt for it."
             )
         token = input("Enter your HuggingFace token: ").strip()
+        if not token:
+            raise RuntimeError("HuggingFace token is required but was not provided.")
+        save = input("Save token to .env for future runs? (y/N): ").strip().lower()
+        if save == "y":
+            save_env_token(token)
+            print(f"Token saved to {ENV_FILE.resolve()}")
+
     if not token:
         raise RuntimeError("HuggingFace token is required but was not provided.")
+
     return token
 
 
@@ -174,7 +212,13 @@ def run_pipeline(url: str, hf_token: str, emotion_classifier, whisper_model, vad
     full_transcript = get_full_transcript(whisper_result)
     transcript_segments = get_segments(whisper_result)
     detected_language = get_detected_language(whisper_result)
-    print(f"  Segments: {len(transcript_segments)} | Language: {detected_language}")
+
+    if vad_segments:
+        before = len(transcript_segments)
+        transcript_segments = filter_segments_by_vad(transcript_segments, vad_segments)
+        print(f"  Segments: {len(transcript_segments)} | Language: {detected_language} ({before - len(transcript_segments)} filtered by VAD)")
+    else:
+        print(f"  Segments: {len(transcript_segments)} | Language: {detected_language}")
 
     diar_segments = safe_run_with_spinner("Running speaker diarization", diarize, audio_path, hf_token, vad_segments)
     print(f"  Speakers found: {len(set(s['speaker'] for s in diar_segments))}")
@@ -274,6 +318,11 @@ def process_all(title: str, audio_path: str, video_dir: str, diar_segments: list
 def main():
     print("SpeakScan - Audio Pipeline")
     print("--------------------------")
+
+    # Handle --set-token command before anything else
+    if len(sys.argv) > 1 and sys.argv[1] == "--set-token":
+        set_token_command()
+        return
 
     try:
         hf_token = get_hf_token()
