@@ -26,6 +26,7 @@ from output_handler import save_outputs, view_results, update_results, is_alread
 from dataset_converter import convert_to_dataset
 from visualizer import generate_visualizations
 from tts_dataset import generate_tts_dataset
+from vocoder_dataset import generate_vocoder_dataset
 from quality_filter import evaluate_segments
 from stats import generate_stats_report
 from keyword_extractor import generate_keywords_report
@@ -313,6 +314,13 @@ def process_all(title: str, audio_path: str, video_dir: str, diar_segments: list
     if keywords:
         top = ", ".join(k["keyword"] for k in keywords[:5])
         print(f"  Keywords: {top}")
+
+    gen_vocoder = input("\nGenerate vocoder dataset (mel spectrogram to wav)? (y/N): ").strip().lower() == "y"
+    if gen_vocoder:
+        vocoder_path, vocoder_count = run_with_spinner(
+            "Generating vocoder dataset", generate_vocoder_dataset, audio_path, video_dir, title, filter_quality
+        )
+        print(f"  Done. {vocoder_count} vocoder segments saved to: {video_dir}")
 
 
 def main():
